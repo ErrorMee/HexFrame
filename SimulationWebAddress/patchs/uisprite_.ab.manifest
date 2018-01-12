@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 2314225948
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ec85a8b24630f601544b91b0543c18ca
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 21f0dc8ebad690f009368069428e0a1a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/BuildAssets/UISprite/cell_02.png
+- Assets/BuildAssets/UISprite/cell_03.png
+- Assets/BuildAssets/UISprite/cell_01.png
+- Assets/BuildAssets/UISprite/cell_04.png
+- Assets/BuildAssets/UISprite/LOGO.png
+Dependencies: []
