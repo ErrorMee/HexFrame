@@ -2,17 +2,19 @@
     "data": [
         {
             "id": 1,
+            "ab": "prefabs/ui_",
             "names": [
                 "BagUI",
                 "FightUI",
                 "LoginUI",
                 "MainUI"
             ],
-            "ab": "prefabs/ui_",
-            "type": "Asset"
+            "type": "Asset",
+            "allUnload": false
         },
         {
             "id": 2,
+            "ab": "uisprite_",
             "names": [
                 "cell_01",
                 "cell_02",
@@ -20,8 +22,8 @@
                 "cell_04",
                 "LOGO"
             ],
-            "ab": "uisprite_",
-            "type": "Texture"
+            "type": "Texture",
+            "allUnload": false
         }
     ]
 }

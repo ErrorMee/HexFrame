@@ -111,14 +111,6 @@ public class ObjectPool<T> : List<T> where T : Object, new()
                     if (Time.time - visitTime > keepTime)
                     {
                         template = null;
-
-                        //todo 后期调整>>> 根据unloadfalse的AB和实际AB内资源的引用关系精准调用UnloadUnusedAssets
-                        if (AssetBundleInfo.unloadFalseCount > 0)
-                        {
-                            Resources.UnloadUnusedAssets();
-                            AssetBundleInfo.unloadFalseCount = 0;
-                        }
-                        
                     }
                 }
             } 

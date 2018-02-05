@@ -57,7 +57,7 @@ public class HttpManager : SingletonBehaviour<HttpManager>
     {
         UnityWebRequest uwr = new UnityWebRequest(url);
         uwr.downloadHandler = new DownloadHandlerBuffer();
-        yield return uwr.SendWebRequest();
+        yield return uwr.Send();
 
         if (uwr.isNetworkError || uwr.isHttpError)
         {
@@ -94,7 +94,7 @@ public class HttpManager : SingletonBehaviour<HttpManager>
         MyDownloadHandler myDownloadHandler = new MyDownloadHandler(preAllocatedBuffer, downloadProgress);
 
         uwr.downloadHandler = myDownloadHandler;
-        yield return uwr.SendWebRequest();
+        yield return uwr.Send();
 
         if (uwr.isNetworkError || uwr.isHttpError)
         {

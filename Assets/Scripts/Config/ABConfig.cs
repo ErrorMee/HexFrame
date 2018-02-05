@@ -51,7 +51,8 @@ public class ABConfig : BaseConfig<ABConfigInfo>
 [Serializable]
 public class ABConfigInfo : BaseConfigInfo
 {
-    public List<string> names = new List<string>();
     public string ab;
+    public List<string> names = new List<string>();
     public string type;
+    public bool allUnload = false;
 }

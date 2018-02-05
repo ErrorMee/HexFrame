@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 423727785
+CRC: 406974042
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fe319dde1f263fdf42fcf562f1618145
+    Hash: 8d904fb4375558621995066b98766989
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -12,5 +12,6 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 Assets:
+- Assets/BuildAssets/Config/testConfig.json
 - Assets/BuildAssets/Config/abConfig.json
 Dependencies: []
