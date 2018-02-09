@@ -24,4 +24,48 @@ public class StringUtil
         "80", "81", "82", "83", "84", "85", "86", "87", "88", "89",
         "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"
     };
+
+    public static int GetUTFLen(string str)
+    {
+        int utfLen = Encoding.Default.GetBytes(str.ToCharArray()).Length;
+        return utfLen;
+    }
+
+    public static string GetMaxLenString(string str,int maxUTFLen)
+    {
+        int utfLen = GetUTFLen(str);
+
+        string dstString = str;
+
+        if (utfLen > maxUTFLen)
+        {
+            int endLen = 0;
+            int subLen = 0;
+            for (int i = 0;i< str.Length; i++)
+            {
+                char temp = str[i];
+
+                int tempLen = Encoding.Default.GetBytes(temp.ToString()).Length;
+
+                endLen += tempLen;
+
+                if (endLen > maxUTFLen)
+                {
+                    break;
+                }
+                else
+                {
+                    subLen++;
+                }
+            }
+
+            dstString = dstString.Substring(0, subLen);
+            return dstString;
+        }
+        else
+        {
+            return dstString;
+        }
+    }
+
 }

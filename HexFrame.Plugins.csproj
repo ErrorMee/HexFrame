@@ -138,6 +138,7 @@
     <None Include="Assets\Scripts\LuaManager\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
     <None Include="Assets\Scripts\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
     <None Include="Assets\StreamingAssets\patchs\patchfiles.txt" />
+    <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
