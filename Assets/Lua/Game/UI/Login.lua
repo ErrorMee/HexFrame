@@ -20,10 +20,9 @@ function start()
     accountTxt.text = defaultAccount;
 
 	CS.EventTriggerListener.Get(loginBtn.gameObject).onClick = OnClickLogin;
-end
 
-function OnClickLogin(go)
-	print("OnClickLogin");
+	CS.UnityEngine.PlayerPrefs.SetString("account",accountTxt.text);
+	CS.UIManager.Instance:OpenUI("MainUI");
 end
 
 function update()

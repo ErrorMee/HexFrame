@@ -35,6 +35,7 @@ public class UIContext
     }
 }
 
+[DisallowMultipleComponent]
 public class UIBase : MonoBehaviour
 {
     public UIContext uiContext;
