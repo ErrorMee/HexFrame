@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UIManager : SingletonBehaviour<UIManager>
 {
+    private Vector3 lastTouchPos;
+
     private Transform uiRootT;
 
     //打开中的UI
@@ -129,5 +131,12 @@ public class UIManager : SingletonBehaviour<UIManager>
     {
         m_openedDic.Remove(ui.uiContext.uiName);
         ResourceManager.Instance.DestroyGameObj(ui.gameObject);
+    }
+
+    private void Update()
+    {
+        lastTouchPos = Input.mousePosition;
+
+        GLog.Log("lastTouchPos " + lastTouchPos.x + "," + lastTouchPos.y + "," + lastTouchPos.z);
     }
 }

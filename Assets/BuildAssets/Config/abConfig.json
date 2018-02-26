@@ -5,6 +5,7 @@
             "ab": "prefabs/ui_",
             "names": [
                 "BagUI",
+                "CustomUI",
                 "FightUI",
                 "LoginUI",
                 "MainUI"

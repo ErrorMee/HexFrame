@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-public class GameEvent
+public static class GameEvent
 {
     static Dictionary<string, List<System.Action<object[]>>> eventDic = new Dictionary<string, List<System.Action<object[]>>>();
 

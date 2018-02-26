@@ -3,7 +3,9 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using XLua;
 
-public class EventTriggerListener : MonoBehaviour, IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IUpdateSelectedHandler, ISelectHandler
+public class EventTriggerListener : MonoBehaviour, 
+    IEventSystemHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, 
+    IMoveHandler
 {
     [CSharpCallLua]
     public delegate void VoidDelegate(GameObject go);
@@ -78,52 +80,19 @@ public class EventTriggerListener : MonoBehaviour, IEventSystemHandler, IPointer
         }    
     }
 
-    private VoidDelegate m_onSelect;
-    public VoidDelegate onSelect
+    private VoidDelegate m_onMove;
+    public VoidDelegate onMove
     {
-        get { return m_onSelect; }
+        get { return m_onMove; }
         set
         {
-            if (m_onSelect != null)
+            if (m_onMove != null)
             {
-                m_onSelect = null;
+                m_onMove = null;
             }
-            m_onSelect = value;
+            m_onMove = value;
         }
     }
-
-    private VoidDelegate m_onUpdateSelect;
-    public VoidDelegate onUpdateSelect
-    {
-        get { return m_onUpdateSelect; }
-        set
-        {
-            if (m_onUpdateSelect != null)
-            {
-                m_onUpdateSelect = null;
-            }
-            m_onUpdateSelect = value;
-        }
-    }
-
-    private VoidDelegate m_onLongPress;
-    public VoidDelegate onLongPress
-    {
-        get { return m_onLongPress; }
-        set
-        {
-            if (m_onLongPress != null)
-            {
-                m_onLongPress = null;
-            }
-            m_onLongPress = value;
-        }
-    }
-
-    
-
-
-    private Coroutine _LongClick;
 
     static public EventTriggerListener Get(GameObject go)
     {
@@ -131,22 +100,17 @@ public class EventTriggerListener : MonoBehaviour, IEventSystemHandler, IPointer
         if (listener == null) listener = go.AddComponent<EventTriggerListener>();
         return listener;
     }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (onClick != null && !longPressTriggerd) onClick(gameObject);
+        if (onClick != null) onClick(gameObject);
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        longPressTriggerd = false;
         if (onDown != null)
         {
             onDown(gameObject);
         };
-        if (onLongPress != null)
-        {
-            if (_LongClick != null) StopCoroutine(_LongClick);
-            _LongClick = StartCoroutine(LongClick(0.5f));
-        }
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -159,42 +123,21 @@ public class EventTriggerListener : MonoBehaviour, IEventSystemHandler, IPointer
     public void OnPointerUp(PointerEventData eventData)
     {
         if (onUp != null) onUp(gameObject);
-        if (onLongPress != null && _LongClick != null)
-        {
-            StopCoroutine(_LongClick);
-            _LongClick = null;
-        }
     }
-    public void OnSelect(BaseEventData eventData)
+
+    public void OnMove(AxisEventData eventData)
     {
-        if (onSelect != null) onSelect(gameObject);
-    }
-    public void OnUpdateSelected(BaseEventData eventData)
-    {
-        if (onUpdateSelect != null) onUpdateSelect(gameObject);
-    }
-    private bool longPressTriggerd = false;
-    private IEnumerator LongClick(float t)
-    {
-        yield return new WaitForSeconds(t);
-        if (onLongPress != null)
-        {
-            longPressTriggerd = true;
-            onLongPress(gameObject);
-        }
+        if (onMove != null) onMove(gameObject);
     }
 
     protected void OnDestroy()
     {
         onClick = null;
         onDown = null;
+        onUp = null;
         onEnter = null;
         onExit = null;
-        onLongPress = null;
-        onSelect = null;
-        onUp = null;
-        onUpdateSelect = null;
-        
+        onMove = null;
     }
 
 }

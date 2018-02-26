@@ -62,6 +62,9 @@ public class GameSetting : ScriptableObject
     /// </summary>
     public void SetGame()
     {
+        Input.multiTouchEnabled = false;
+        Application.runInBackground = true;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Application.targetFrameRate = fps;
         if (writeLog)
         {
