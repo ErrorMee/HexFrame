@@ -1,43 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CustomUI : UIBase
 {
-    public HexNodeUI prefab;
+    public HexNodeTypeUI prefabType;
+    public RectTransform hexNodeListRTF;
+    public CustomHexNodeUI prefab;
     private List<HexNodeUI> cells = new List<HexNodeUI>();
     private HexGrid grid = new HexGrid();
 
-    void Start () {
-
-        grid.widthMax = 5;
-        grid.heightMax = 5;
-        grid.OriginCenter();
-
-        int id = 0;
-        for (int y = 0; y < grid.heightMax; y++)
-        {
-            List<HexNode> row = new List<HexNode>();
-            grid.nodes.Add(row);
-            for (int x = 0; x < grid.widthMax; x++)
-            {
-                HexNode node = new HexNode();
-                node.originPoint = grid.originPoint;
-                node.ArrayCoord = new Vector2(x, y);
-                node.id = ++id;
-                row.Add(node);
-            }
-        }
-        
-        grid.TraversalNodes(CreateCell);
+    void Start ()
+    {
+        CreateTypeList();
+        CreateCustomList();
     }
 
-    private void CreateCell(HexNode node)
+    private void CreateTypeList()
     {
-        HexNodeUI cell = Instantiate<HexNodeUI>(prefab);
-        cells.Add(cell);
-        cell.transform.SetParent(transform, false);
+        Array values = Enum.GetValues(typeof(HexNodeType));
+        foreach (int value in values)
+        {
+            CreateNodeType(value);
+        }
+    }
 
+    private void CreateNodeType(int value)
+    {
+        HexNodeTypeUI cellType = prefabType;
+        if (value > (int)HexNodeType.NONE)
+        {
+            cellType = Instantiate<HexNodeTypeUI>(prefabType);
+            cellType.transform.SetParent(prefabType.transform.parent, false);
+        }
+    }
+
+    private void CreateCustomList()
+    {
+        grid = CustomModel.Instance.CreateGrid(7, 9);
+        grid.TraversalNodes(CreateNode);
+    }
+
+    private void CreateNode(HexNode node)
+    {
+        CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefab);
+        cells.Add(cell);
+        cell.transform.SetParent(hexNodeListRTF, false);
+        
         cell.InitData(node);
     }
     

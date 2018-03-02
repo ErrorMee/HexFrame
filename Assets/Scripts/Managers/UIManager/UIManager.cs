@@ -135,8 +135,7 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     private void Update()
     {
-        lastTouchPos = Input.mousePosition;
-
-        GLog.Log("lastTouchPos " + lastTouchPos.x + "," + lastTouchPos.y + "," + lastTouchPos.z);
+        //lastTouchPos = Input.mousePosition;
+        //GLog.Log("lastTouchPos " + lastTouchPos.x + "," + lastTouchPos.y + "," + lastTouchPos.z);
     }
 }

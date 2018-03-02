@@ -124,6 +124,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017.1/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -182,6 +188,9 @@
     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
     <None Include="Assets\StreamingAssets\patchs\patchfiles.txt" />
+    <None Include="Assets\ThirdParty\DOTween\DOTween.XML" />
+    <None Include="Assets\ThirdParty\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\ThirdParty\DOTween\readme.txt" />
     <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

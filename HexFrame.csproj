@@ -76,6 +76,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>D:/Program Files/Unity2017.1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017.1/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -208,12 +211,15 @@
     <Compile Include="Assets\Scripts\Managers\UIManager\base\SimpleScrollList.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager\UIBase.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Model\HexGrid\CustomModel.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexConst.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexGrid.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexNode.cs" />
     <Compile Include="Assets\Scripts\UIs\BagUI.cs" />
     <Compile Include="Assets\Scripts\UIs\FightUI.cs" />
+    <Compile Include="Assets\Scripts\UIs\HexUI\CustomHexNodeUI.cs" />
     <Compile Include="Assets\Scripts\UIs\HexUI\CustomUI.cs" />
+    <Compile Include="Assets\Scripts\UIs\HexUI\HexNodeTypeUI.cs" />
     <Compile Include="Assets\Scripts\UIs\HexUI\HexNodeUI.cs" />
     <Compile Include="Assets\Scripts\UIs\MainUI.cs" />
     <Compile Include="Assets\Scripts\Util\ColorUtil.cs" />
@@ -361,6 +367,9 @@
     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
     <None Include="Assets\StreamingAssets\patchs\patchfiles.txt" />
+    <None Include="Assets\ThirdParty\DOTween\DOTween.XML" />
+    <None Include="Assets\ThirdParty\DOTween\Editor\DOTweenEditor.XML" />
+    <None Include="Assets\ThirdParty\DOTween\readme.txt" />
     <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

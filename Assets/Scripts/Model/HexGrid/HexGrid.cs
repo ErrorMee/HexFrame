@@ -27,12 +27,27 @@ public class HexGrid
     /// </summary>
     public Vector2 originPoint = new Vector2();
 
-    /// <summary>
-    /// 原点居中
-    /// </summary>
-    public void OriginCenter()
+    public void InitSize(int _widthMax,int _heightMax)
     {
+        widthMax = _widthMax;
+        heightMax = _heightMax;
         originPoint = new Vector2(-(widthMax - 1) * 0.5f, -(heightMax - 1) * 0.5f);
+    }
+
+    /// <summary>
+    /// 建立邻居关系
+    /// </summary>
+    public void BuildNeighbors()
+    {
+        TraversalNodes(BuildNeighborsHandle);
+    }
+
+    private void BuildNeighborsHandle(HexNode node)
+    {
+        int more = (int)node.ArrayCoord.x % 2;
+        node.SetNeighbor(GetNodeFromArray(new Vector2(node.ArrayCoord.x, node.ArrayCoord.y + 1)), (int)HexNodeDir.NORTH);
+        node.SetNeighbor(GetNodeFromArray(new Vector2(node.ArrayCoord.x + 1, node.ArrayCoord.y + more)), (int)HexNodeDir.NORTH_EAST);
+        node.SetNeighbor(GetNodeFromArray(new Vector2(node.ArrayCoord.x + 1, node.ArrayCoord.y - 1 + more)), (int)HexNodeDir.SOUTH_EAST);
     }
 
     /// <summary>
@@ -52,5 +67,25 @@ public class HexGrid
         }
     }
 
+    /// <summary>
+    /// 从数组中取出节点
+    /// </summary>
+    /// <param name="arrayCoord"></param>
+    public HexNode GetNodeFromArray(Vector2 arrayCoord)
+    {
+        if (arrayCoord.x < 0 || arrayCoord.y < 0)
+        {
+            return null;
+        }
 
+        if (nodes.Count <= arrayCoord.y)
+        {
+            return null;
+        }
+        if (nodes[(int)arrayCoord.y].Count <= arrayCoord.x)
+        {
+            return null;
+        }
+        return nodes[(int)arrayCoord.y][(int)arrayCoord.x];
+    }
 }

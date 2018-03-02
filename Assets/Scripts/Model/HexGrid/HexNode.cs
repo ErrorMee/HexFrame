@@ -26,6 +26,26 @@ public class HexNode
     //六边形坐标
     public HexCoordinates hexCoord;
 
+    //邻居们 定长数组
+    public HexNode[] neighbors = new HexNode[6];
+
+    /// <summary>
+    /// 设置邻居
+    /// </summary>
+    /// <param name="neighbor"></param>
+    /// <param name="dir"></param>
+    public void SetNeighbor(HexNode neighbor,int hexNodeDir)
+    {
+        neighbors[hexNodeDir - 1] = neighbor;
+        if (neighbor != null)
+        {
+            if (hexNodeDir <= (int)HexNodeDir.SOUTH_EAST)
+            {
+                neighbor.SetNeighbor(this, hexNodeDir + (int)HexNodeDir.SOUTH_EAST);
+            }
+        }
+    }
+
     //可视化的坐标
     public Vector2 GetViewCoord()
     {
@@ -41,6 +61,7 @@ public class HexNode
     {
         return (ArrayCoord.x + originPoint.x) + "," + (ArrayCoord.y + originPoint.y);
     }
+
     public string HexPosString()
     {
         return hexCoord.PosString(originPoint);

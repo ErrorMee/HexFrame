@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum HexNodeType
+public enum HexNodeType:int
 {
-    NONE = 0,       //空白区域
+    NONE = 0,       //清除点
     ORIGIN = 1,     //起点
     NORM = 2,       //标准点
     ORDER = 3,      //顺序点
