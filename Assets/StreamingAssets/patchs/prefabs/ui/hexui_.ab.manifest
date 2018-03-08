@@ -1,0 +1,59 @@
+ManifestFileVersion: 0
+CRC: 1994489546
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0a0a10c4421ac3c5adf974db63b3ff70
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5e3c7af8b121044f9dab6c777eeddb9a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -1184210157, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cfd3d9c3452ffcc4e8771ee2ffd47bfe, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 01b6c717cdb146649917e766a7c3df3b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 43ca9b2c9e8c2ae4a81f8954a706d898, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d96f1fdc256f9af46bb5248193266d2c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/BuildAssets/Prefabs/UI/HexUI/CustomUI.prefab
+- Assets/BuildAssets/Prefabs/UI/HexUI/CustomHexNodeUI.prefab
+- Assets/BuildAssets/Prefabs/UI/HexUI/HexNodeUI.prefab
+Dependencies:
+- F:/StudySpace/GitSpace/HexFrame/Assets/StreamingAssets/patchs/uisprite_.ab

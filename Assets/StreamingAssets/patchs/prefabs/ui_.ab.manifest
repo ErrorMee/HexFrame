@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2739043732
+CRC: 1032987596
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6dfe0aaccbb780421dec050dd26d08e5
+    Hash: 19d4706c9719cccb3340f108810c1dcf
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 367ef8706458884e9a61d1abb0c383ba
+    Hash: 891c17cbd82aa34c907a56f86073b43b
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -51,4 +51,4 @@ Assets:
 - Assets/BuildAssets/Prefabs/UI/LoginUI.prefab
 - Assets/BuildAssets/Prefabs/UI/MainUI.prefab
 Dependencies:
-- E:/StudySpace/GitSpace/GemaFrame/Assets/StreamingAssets/patchs/uisprite_.ab
+- F:/StudySpace/GitSpace/HexFrame/Assets/StreamingAssets/patchs/uisprite_.ab

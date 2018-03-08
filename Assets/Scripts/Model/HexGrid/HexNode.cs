@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HexNode
+public class HexNode : HexBaseNode
 {
-    public int id;
-
-    //节点类型
-    public HexNodeType nodeType = HexNodeType.NONE;
-
-    //偏移位置
+    /// <summary>
+    /// 偏移位置
+    /// </summary>
     public Vector2 originPoint;
 
-    //二维数组坐标
+    /// <summary>
+    /// 二维数组坐标
+    /// </summary>
     private Vector2 arrayCoord;
     public Vector2 ArrayCoord {
         get { return arrayCoord; }
@@ -22,12 +21,21 @@ public class HexNode
             hexCoord = HexCoordinates.FromArrayCoordinates((int)arrayCoord.x, (int)arrayCoord.y);
         }
     }
-
-    //六边形坐标
+    
+    /// <summary>
+    /// 六边形坐标
+    /// </summary>
     public HexCoordinates hexCoord;
-
-    //邻居们 定长数组
+    
+    /// <summary>
+    /// 邻居们
+    /// </summary>
     public HexNode[] neighbors = new HexNode[6];
+
+    public HexNode():base()
+    {
+        
+    }
 
     /// <summary>
     /// 设置邻居
@@ -45,8 +53,11 @@ public class HexNode
             }
         }
     }
-
-    //可视化的坐标
+    
+    /// <summary>
+    /// 可视化的坐标
+    /// </summary>
+    /// <returns></returns>
     public Vector2 GetViewCoord()
     {
         Vector2 viewCoord = new Vector2();

@@ -16,6 +16,20 @@ public class CustomHexNodeUI : HexNodeUI
     {
         base.ClickNode(go);
 
-        GLog.Log("ClickNode " + hexNodeData.ArrayPosString());
+        CustomModel.Instance.SelectNode(hexNodeData);
+    }
+
+    public override void UpdateIcon()
+    {
+        base.UpdateIcon();
+
+        if (hexNodeData.nodeType != HexNodeType.NONE)
+        {
+            icon.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            icon.color = new Color(1, 1, 1, 0);
+        }
     }
 }

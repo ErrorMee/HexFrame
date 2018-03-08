@@ -13,12 +13,11 @@ public class HexNodeUI : MonoBehaviour {
 
     protected virtual void Awake()
     {
-        
+        ShowTip("");
     }
 
     private void OnEnable()
     {
-        ShowTip("");
         EventTriggerListener.Get(gameObject).onEnter = EnterNode;
         EventTriggerListener.Get(gameObject).onExit = ExitNode;
         EventTriggerListener.Get(gameObject).onClick = ClickNode;
@@ -39,7 +38,7 @@ public class HexNodeUI : MonoBehaviour {
 
     }
 
-    public void InitData(HexNode data)
+    public virtual void InitData(HexNode data)
     {
         hexNodeData = data;
         UpdatePos();
@@ -62,4 +61,8 @@ public class HexNodeUI : MonoBehaviour {
         }
     }
 
+    public virtual void UpdateIcon()
+    {
+        
+    }
 }

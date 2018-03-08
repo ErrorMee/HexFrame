@@ -26,6 +26,8 @@ public class Game : SingletonBehaviour<Game>
         GameEvent.RegisterEvent(GameEventType.PatchComplete, OnPatchComplete);
         GameEvent.RegisterEvent(GameEventType.AssetManagerReady, OnAssetManagerReady);
         GameEvent.RegisterEvent(GameEventType.LuaManagerReady, OnLuaManagerReady);
+
+        HexGridModel.Instance.Init();
     }
 
     void Start()

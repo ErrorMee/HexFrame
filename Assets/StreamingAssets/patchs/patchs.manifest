@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3358856159
+CRC: 3541646302
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -12,3 +12,7 @@ AssetBundleManifest:
     Info_2:
       Name: config_.ab
       Dependencies: {}
+    Info_3:
+      Name: prefabs/ui/hexui_.ab
+      Dependencies:
+        Dependency_0: uisprite_.ab

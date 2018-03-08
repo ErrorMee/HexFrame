@@ -27,11 +27,16 @@ public class HexGrid
     /// </summary>
     public Vector2 originPoint = new Vector2();
 
+    /// <summary>
+    /// 表格完成的最大顺序点
+    /// </summary>
+    public static HexNodeOrder NODE_ORDER = HexNodeOrder.NONE;
+
     public void InitSize(int _widthMax,int _heightMax)
     {
         widthMax = _widthMax;
         heightMax = _heightMax;
-        originPoint = new Vector2(-(widthMax - 1) * 0.5f, -(heightMax - 1) * 0.5f);
+        originPoint = new Vector2(-(widthMax - 1) * 0.5f, -(heightMax - 0.5f) * 0.5f);
     }
 
     /// <summary>

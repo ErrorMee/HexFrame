@@ -5,50 +5,68 @@ using System;
 
 public class CustomUI : UIBase
 {
-    public HexNodeTypeUI prefabType;
+    public HexNodeMarkerUI prefabMarker;
     public RectTransform hexNodeListRTF;
-    public CustomHexNodeUI prefab;
-    private List<HexNodeUI> cells = new List<HexNodeUI>();
-    private HexGrid grid = new HexGrid();
+    public CustomHexNodeUI prefabCustom;
+    private List<CustomHexNodeUI> cells = new List<CustomHexNodeUI>();
+
+    private void Awake()
+    {
+        CustomModel.Instance.Init();
+        CustomModel.Instance.updateNodeEvent = OnNodeUpdate;
+    }
 
     void Start ()
     {
-        CreateTypeList();
+        CreateMarkerList();
         CreateCustomList();
     }
 
-    private void CreateTypeList()
+    private void CreateMarkerList()
     {
-        Array values = Enum.GetValues(typeof(HexNodeType));
-        foreach (int value in values)
+        for (int i = 0;i<HexGridModel.Instance.hexNodeMarkers.Count;i++)
         {
-            CreateNodeType(value);
+            HexNode node = HexGridModel.Instance.hexNodeMarkers[i];
+            CreateNodeMarker(node);
         }
     }
 
-    private void CreateNodeType(int value)
+    private void CreateNodeMarker(HexNode nodeDate)
     {
-        HexNodeTypeUI cellType = prefabType;
-        if (value > (int)HexNodeType.NONE)
+        HexNodeMarkerUI nodeMarker = prefabMarker;
+        if (nodeDate.nodeType > HexNodeType.NONE)
         {
-            cellType = Instantiate<HexNodeTypeUI>(prefabType);
-            cellType.transform.SetParent(prefabType.transform.parent, false);
+            nodeMarker = Instantiate<HexNodeMarkerUI>(prefabMarker);
+            nodeMarker.transform.SetParent(prefabMarker.transform.parent, false);
         }
+
+        nodeMarker.InitData(nodeDate);
     }
 
     private void CreateCustomList()
     {
-        grid = CustomModel.Instance.CreateGrid(7, 9);
-        grid.TraversalNodes(CreateNode);
+        CustomModel.Instance.crtQuest.grid.TraversalNodes(CreateNode);
     }
 
     private void CreateNode(HexNode node)
     {
-        CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefab);
+        CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefabCustom);
         cells.Add(cell);
         cell.transform.SetParent(hexNodeListRTF, false);
         
         cell.InitData(node);
+    }
+
+    private void OnNodeUpdate(HexNode node)
+    {
+        foreach(var cell in cells)
+        {
+            if (cell.hexNodeData.id == node.id)
+            {
+                cell.UpdateIcon();
+                return;
+            }
+        }
     }
     
     private void OnDrawGizmos()

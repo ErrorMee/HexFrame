@@ -5,7 +5,6 @@
             "ab": "prefabs/ui_",
             "names": [
                 "BagUI",
-                "CustomUI",
                 "FightUI",
                 "LoginUI",
                 "MainUI"
@@ -15,13 +14,28 @@
         },
         {
             "id": 2,
+            "ab": "prefabs/ui/hexui_",
+            "names": [
+                "CustomHexNodeUI",
+                "CustomUI",
+                "HexNodeUI"
+            ],
+            "type": "Asset",
+            "allUnload": false
+        },
+        {
+            "id": 3,
             "ab": "uisprite_",
             "names": [
                 "cell_01",
                 "cell_02",
                 "cell_03",
                 "cell_04",
-                "LOGO"
+                "frame_01",
+                "frame_02",
+                "LOGO",
+                "LOGO_16",
+                "LOGO_17"
             ],
             "type": "Texture",
             "allUnload": false
