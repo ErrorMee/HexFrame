@@ -9,43 +9,39 @@ public class CustomModel : Singleton<CustomModel>
     public static int CUSTOM_WIDTH = 7;
     public static int CUSTOM_HEIGHT = 9;
 
-    public List<CustomQuest> questList;
+    public List<HexQuest> questList;
 
-    public CustomQuest crtQuest;
+    public HexQuest crtQuest;
 
-    public HexNode selectType;
+    public HexNodeMarker selectMarker;
     public HexNode selectNode;
 
     public Action<HexNode> updateNodeEvent;
 
     public void Init()
     {
-        questList = new List<CustomQuest>();
+        questList = new List<HexQuest>();
 
         if (questList.Count < 1)
         {
-            CustomQuest quest = new CustomQuest();
+            HexQuest quest = new HexQuest();
+            quest.type = HexQuestType.CUSTOM;
             questList.Add(quest);
             quest.grid = HexGridModel.Instance.CreateEmptyGrid(CUSTOM_WIDTH, CUSTOM_HEIGHT);
             crtQuest = quest;
+
+            quest.Save();
         }
     }
 
-    public void SelectType(HexNode node)
+    public void SelectMarker(HexNodeMarker marker)
     {
-        if (selectType == node)
+        if (selectMarker == marker)
         {
             return;
         }
-        selectType = node;
-        if (selectNode != null)
-        {
-            selectNode.nodeType = selectType.nodeType;
-            if (updateNodeEvent != null)
-            {
-                updateNodeEvent(selectNode);
-            }
-        }
+        selectMarker = marker;
+        SetMarker(selectNode, selectMarker);
     }
 
     public void SelectNode(HexNode node)
@@ -55,12 +51,17 @@ public class CustomModel : Singleton<CustomModel>
             return;
         }
         selectNode = node;
-        if (selectType != null)
+        SetMarker(selectNode, selectMarker);
+    }
+
+    private void SetMarker(HexNode node, HexNodeMarker marker)
+    {
+        if (node != null && marker != null)
         {
-            selectNode.nodeType = selectType.nodeType;
+            node.marker = marker;
             if (updateNodeEvent != null)
             {
-                updateNodeEvent(selectNode);
+                updateNodeEvent(node);
             }
         }
     }

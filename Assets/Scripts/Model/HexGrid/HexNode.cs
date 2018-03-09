@@ -2,8 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HexNode : HexBaseNode
+public class HexNode
 {
+    /// <summary>
+    /// 最大ID
+    /// </summary>
+    private static int MAX_ID;
+
+    /// <summary>
+    /// 唯一ID
+    /// </summary>
+    public int id;
+
+    /// <summary>
+    /// 样例
+    /// </summary>
+    public HexNodeMarker marker = HexNodeMarker.MARKERS[0];
+
     /// <summary>
     /// 偏移位置
     /// </summary>
@@ -32,9 +47,9 @@ public class HexNode : HexBaseNode
     /// </summary>
     public HexNode[] neighbors = new HexNode[6];
 
-    public HexNode():base()
+    public HexNode()
     {
-        
+        id = ++MAX_ID;
     }
 
     /// <summary>

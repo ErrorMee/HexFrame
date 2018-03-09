@@ -23,7 +23,7 @@ public class CustomHexNodeUI : HexNodeUI
     {
         base.UpdateIcon();
 
-        if (hexNodeData.nodeType != HexNodeType.NONE)
+        if (hexNodeData.marker.nodeType != HexNodeType.NONE)
         {
             icon.color = new Color(1, 1, 1, 1);
         }

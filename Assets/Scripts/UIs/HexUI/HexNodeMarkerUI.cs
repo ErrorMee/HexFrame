@@ -1,25 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
-public class HexNodeMarkerUI : HexNodeUI
-{
+public class HexNodeMarkerUI : MonoBehaviour {
 
-    protected override void Awake()
+    public HexNodeMarker data;
+
+    public Image icon;
+    public Text tip;
+
+
+    private void OnEnable()
     {
-        base.Awake();
+        EventTriggerListener.Get(gameObject).onEnter = EnterNode;
+        EventTriggerListener.Get(gameObject).onExit = ExitNode;
+        EventTriggerListener.Get(gameObject).onClick = ClickNode;
     }
 
-    protected override void ClickNode(GameObject go)
+    private void EnterNode(GameObject go)
     {
-        base.ClickNode(go);
 
-        CustomModel.Instance.SelectType(hexNodeData);
     }
 
-    public override void InitData(HexNode data)
+    private void ExitNode(GameObject go)
     {
-        hexNodeData = data;
-        ShowTip(hexNodeData.nodeType.ToString());
+
     }
+
+    private void ClickNode(GameObject go)
+    {
+        CustomModel.Instance.SelectMarker(data);
+    }
+
+    public void InitData(HexNodeMarker _data)
+    {
+        data = _data;
+        ShowTip(data.nodeType.ToString());
+    }
+
+    public void ShowTip(string tips)
+    {
+        if (tip)
+        {
+            tip.text = tips;
+        }
+    }
+    
 }
+

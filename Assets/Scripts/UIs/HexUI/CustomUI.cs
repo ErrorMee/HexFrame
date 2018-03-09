@@ -24,23 +24,23 @@ public class CustomUI : UIBase
 
     private void CreateMarkerList()
     {
-        for (int i = 0;i<HexGridModel.Instance.hexNodeMarkers.Count;i++)
+        for (int i = 0;i<HexNodeMarker.MARKERS.Count;i++)
         {
-            HexNode node = HexGridModel.Instance.hexNodeMarkers[i];
-            CreateNodeMarker(node);
+            HexNodeMarker marker = HexNodeMarker.MARKERS[i];
+            CreateNodeMarker(marker);
         }
     }
 
-    private void CreateNodeMarker(HexNode nodeDate)
+    private void CreateNodeMarker(HexNodeMarker marker)
     {
         HexNodeMarkerUI nodeMarker = prefabMarker;
-        if (nodeDate.nodeType > HexNodeType.NONE)
+        if (marker.nodeType > HexNodeType.NONE)
         {
             nodeMarker = Instantiate<HexNodeMarkerUI>(prefabMarker);
             nodeMarker.transform.SetParent(prefabMarker.transform.parent, false);
         }
 
-        nodeMarker.InitData(nodeDate);
+        nodeMarker.InitData(marker);
     }
 
     private void CreateCustomList()

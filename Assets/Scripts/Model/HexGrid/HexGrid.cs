@@ -7,10 +7,9 @@ using UnityEngine;
 public class HexGrid
 {
     /// <summary>
-    /// 所有节点
-    /// 原则上支持每行个数不一致
+    /// 表格完成的最大顺序点
     /// </summary>
-    public List<List<HexNode>> nodes = new List<List<HexNode>>();
+    public static HexNodeOrder NODE_ORDER = HexNodeOrder.NONE;
 
     /// <summary>
     /// 最大宽度 网格上最左到最右
@@ -28,9 +27,10 @@ public class HexGrid
     public Vector2 originPoint = new Vector2();
 
     /// <summary>
-    /// 表格完成的最大顺序点
+    /// 所有节点
+    /// 原则上支持每行个数不一致
     /// </summary>
-    public static HexNodeOrder NODE_ORDER = HexNodeOrder.NONE;
+    public List<List<HexNode>> nodes = new List<List<HexNode>>();
 
     public void InitSize(int _widthMax,int _heightMax)
     {

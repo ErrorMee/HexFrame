@@ -1,9 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
+public enum EnviromentEnum
+{
+    /// <summary>
+    /// 产品环境
+    /// </summary>
+    Product = 1,
+
+    /// <summary>
+    /// 开发环境
+    /// </summary>
+    Devlopment = 2,
+}
+
 [Serializable]
 public class GameSetting : ScriptableObject
 {
+    public EnviromentEnum environment = EnviromentEnum.Devlopment;
+
     [Header("---------- Patch ----------")]
 
     /// <summary>
