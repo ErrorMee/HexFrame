@@ -230,6 +230,7 @@
     <Compile Include="Assets\Scripts\Util\ColorUtil.cs" />
     <Compile Include="Assets\Scripts\Util\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\Util\EncryptUtil.cs" />
+    <Compile Include="Assets\Scripts\Util\FindAllFiles.cs" />
     <Compile Include="Assets\Scripts\Util\GLog.cs" />
     <Compile Include="Assets\Scripts\Util\MD5Util.cs" />
     <Compile Include="Assets\Scripts\Util\MyExtensions.cs" />

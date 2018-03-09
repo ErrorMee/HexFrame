@@ -38,36 +38,45 @@ public class HexQuest
     /// </summary>
     public void Save()
     {
-        string fileDir;
-#if UNITY_EDITOR
-        fileDir = PathUtil.StreamingassetsPath + "/HexQuest/" + type.ToString() +  "/";
-#else
-        fileDir = PathUtil.PatchPath + "/HexQuest/" + type.ToString() +  "/";
-#endif
-        string filePath = fileDir + id + ".bytes";
-        
-        if (!Directory.Exists(fileDir))
-        {
-            Directory.CreateDirectory(fileDir);
-        }
-        
+        string questDir = PathUtil.GetQuestDir(type);
+
+        string filePath = questDir + id + ".bytes";
 
         FileStream fs = new FileStream(filePath, FileMode.Create);
 
         BinaryWriter bw = new BinaryWriter(fs);
 
         bw.Write(id);
-
-        bw.Write(grid.widthMax);
-        bw.Write(grid.heightMax);
-
+        
         grid.TraversalNodes((node) =>
         {
             bw.Write(node.marker.id);
         });
 
         fs.Flush();
-        fs = null;
-        bw = null;
+        fs.Close();
+        bw.Close();
+    }
+
+    /// <summary>
+    /// 读取文件
+    /// </summary>
+    public void Load(string fileName)
+    {
+        FileStream fs = new FileStream(fileName, FileMode.Open);
+
+        BinaryReader br = new BinaryReader(fs);
+
+        MAX_ID = id = br.ReadInt32();
+
+        grid = HexGridModel.Instance.CreateEmptyGrid();
+        
+        grid.TraversalNodes((node) =>
+        {
+            node.marker = HexNodeMarker.MARKERS[br.ReadInt32()];
+        });
+
+        fs.Close();
+        br.Close();
     }
 }

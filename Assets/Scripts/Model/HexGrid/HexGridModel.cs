@@ -5,6 +5,9 @@ using System;
 
 public class HexGridModel : Singleton<HexGridModel>
 {
+    
+    public static int WIDTH = 7;
+    public static int HEIGHT = 9;
 
     public HexGrid grid;
 
@@ -13,10 +16,10 @@ public class HexGridModel : Singleton<HexGridModel>
         HexNodeMarker.CreateMarkers();
     }
 
-    public HexGrid CreateEmptyGrid(int width, int height)
+    public HexGrid CreateEmptyGrid()
     {
         HexGrid grid = new HexGrid();
-        grid.InitSize(width, height);
+        grid.InitSize(WIDTH, HEIGHT);
 
         for (int y = 0; y < grid.heightMax; y++)
         {

@@ -97,6 +97,25 @@ public class PathUtil
         {
             return StreamingPatchPath + relativePath;
         }
+    }
 
+    /// <summary>
+    /// 获取关卡文件夹
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    public static string GetQuestDir(HexQuestType type)
+    {
+        string questDir;
+#if UNITY_EDITOR
+        questDir = PathUtil.StreamingassetsPath + "/HexQuest/" + type.ToString() + "/";
+#else
+        questDir = PathUtil.PatchPath + "/HexQuest/" + type.ToString() +  "/";
+#endif
+        if (!Directory.Exists(questDir))
+        {
+            Directory.CreateDirectory(questDir);
+        }
+        return questDir;
     }
 }

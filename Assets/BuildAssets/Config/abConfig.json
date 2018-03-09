@@ -27,15 +27,16 @@
             "id": 3,
             "ab": "uisprite_",
             "names": [
+                "128add",
                 "cell_01",
                 "cell_02",
                 "cell_03",
                 "cell_04",
                 "frame_01",
                 "frame_02",
-                "LOGO",
-                "LOGO_16",
-                "LOGO_17"
+                "logo_01",
+                "logo_16",
+                "logo_17"
             ],
             "type": "Texture",
             "allUnload": false

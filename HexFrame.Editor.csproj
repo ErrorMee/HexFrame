@@ -124,11 +124,11 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
-    </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017.1/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -171,7 +171,6 @@
     <Compile Include="Assets\Editor\AssetBundleBrowser\MessageList.cs" />
     <Compile Include="Assets\Editor\AssetBundleBrowser\MessageSystem.cs" />
     <Compile Include="Assets\Editor\GemaEditor\CreateAssetEditor.cs" />
-    <Compile Include="Assets\Editor\GemaEditor\FindAllFiles.cs" />
     <Compile Include="Assets\Editor\GemaEditor\GemaEditor.cs" />
     <Compile Include="Assets\Editor\GemaEditor\GemaEditorConst.cs" />
     <Compile Include="Assets\Editor\GemaEditor\InspectorEdit\LuaComponentEditor.cs" />

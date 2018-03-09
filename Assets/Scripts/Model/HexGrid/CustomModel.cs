@@ -6,8 +6,6 @@ using System;
 public class CustomModel : Singleton<CustomModel>
 {
 
-    public static int CUSTOM_WIDTH = 7;
-    public static int CUSTOM_HEIGHT = 9;
 
     public List<HexQuest> questList;
 
@@ -22,16 +20,26 @@ public class CustomModel : Singleton<CustomModel>
     {
         questList = new List<HexQuest>();
 
+        FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, LoadQuestFormFile);
+        
         if (questList.Count < 1)
         {
             HexQuest quest = new HexQuest();
             quest.type = HexQuestType.CUSTOM;
             questList.Add(quest);
-            quest.grid = HexGridModel.Instance.CreateEmptyGrid(CUSTOM_WIDTH, CUSTOM_HEIGHT);
+            quest.grid = HexGridModel.Instance.CreateEmptyGrid();
             crtQuest = quest;
 
             quest.Save();
         }
+    }
+
+    private void LoadQuestFormFile(string fileName)
+    {
+        HexQuest quest = new HexQuest();
+        quest.type = HexQuestType.CUSTOM;
+        quest.Load(fileName);
+        questList.Add(quest);
     }
 
     public void SelectMarker(HexNodeMarker marker)
