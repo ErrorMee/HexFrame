@@ -9,6 +9,8 @@ public class HexGridModel : Singleton<HexGridModel>
     public static int WIDTH = 7;
     public static int HEIGHT = 9;
 
+    public static float VIEW_HEIGHT = (HEIGHT - 0.5f) * 0.5f * HexConst.height;
+
     public HexGrid grid;
 
     public void Init()

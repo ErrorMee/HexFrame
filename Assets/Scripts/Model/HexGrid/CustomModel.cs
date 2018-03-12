@@ -5,11 +5,12 @@ using System;
 
 public class CustomModel : Singleton<CustomModel>
 {
-
+    public const int MAX_CUSTOM_QUEST_NUM = 99;
 
     public List<HexQuest> questList;
 
     public HexQuest crtQuest;
+    public int crtQuestIndex;
 
     public HexNodeMarker selectMarker;
     public HexNode selectNode;
@@ -19,9 +20,9 @@ public class CustomModel : Singleton<CustomModel>
     public void Init()
     {
         questList = new List<HexQuest>();
-
-        FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, LoadQuestFormFile);
         
+        FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, LoadQuestFormFile);
+
         if (questList.Count < 1)
         {
             HexQuest quest = new HexQuest();
@@ -29,8 +30,16 @@ public class CustomModel : Singleton<CustomModel>
             questList.Add(quest);
             quest.grid = HexGridModel.Instance.CreateEmptyGrid();
             crtQuest = quest;
-
+            crtQuestIndex = 1;
             quest.Save();
+        }
+        else
+        {
+            if (crtQuestIndex <= 0 || crtQuestIndex > questList.Count)
+            {
+                crtQuestIndex = questList.Count;
+            }
+            crtQuest = questList[crtQuestIndex - 1];
         }
     }
 

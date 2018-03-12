@@ -28,6 +28,8 @@
             "ab": "uisprite_",
             "names": [
                 "128add",
+                "128close",
+                "128stop",
                 "cell_01",
                 "cell_02",
                 "cell_03",

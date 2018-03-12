@@ -40,7 +40,7 @@ public class HexQuest
     {
         string questDir = PathUtil.GetQuestDir(type);
 
-        string filePath = questDir + id + ".bytes";
+        string filePath = questDir + id.ToString("00000") + ".bytes";
 
         FileStream fs = new FileStream(filePath, FileMode.Create);
 

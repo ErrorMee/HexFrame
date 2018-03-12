@@ -107,3 +107,16 @@ public class GameSetting : ScriptableObject
     }
 
 }
+
+public static class GameConst
+{
+    /// <summary>
+    /// UGUI 尺寸
+    /// </summary>
+    public static Vector2 ReferenceResoulution = new Vector2(1080, 1920);
+
+    /// <summary>
+    /// 屏幕，画布尺寸比
+    /// </summary>
+    public static Vector2 PixelPerCanvas = new Vector2(Screen.width / ReferenceResoulution.x, Screen.height / ReferenceResoulution.y);
+}
