@@ -156,7 +156,9 @@ public class CustomUI : UIBase
 
     private void OnNewButtonClick(GameObject go)
     {
-
+        CustomModel.Instance.CreateQuest();
+        CreateQuestNode(CustomModel.Instance.crtQuest);
+        quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
     }
 
     private void OnDrawGizmos()

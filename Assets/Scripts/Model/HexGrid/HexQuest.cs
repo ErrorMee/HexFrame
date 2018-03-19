@@ -11,10 +11,6 @@ public enum HexQuestType : int
 
 public class HexQuest
 {
-    /// <summary>
-    /// 最大ID
-    /// </summary>
-    private static int MAX_ID;
 
     /// <summary>
     /// 唯一ID
@@ -30,7 +26,6 @@ public class HexQuest
 
     public HexQuest()
     {
-        id = ++ MAX_ID;
     }
 
     /// <summary>
@@ -67,7 +62,7 @@ public class HexQuest
 
         BinaryReader br = new BinaryReader(fs);
 
-        MAX_ID = id = br.ReadInt32();
+        id = br.ReadInt32();
 
         grid = HexGridModel.Instance.CreateEmptyGrid();
         

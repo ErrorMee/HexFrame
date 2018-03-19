@@ -7,6 +7,8 @@ public class CustomModel : Singleton<CustomModel>
 {
     public const int MAX_CUSTOM_QUEST_NUM = 99;
 
+    private static int MAX_QUEST_ID;
+
     public List<HexQuest> questList;
 
     public HexQuest crtQuest;
@@ -25,13 +27,8 @@ public class CustomModel : Singleton<CustomModel>
 
         if (questList.Count < 1)
         {
-            HexQuest quest = new HexQuest();
-            quest.type = HexQuestType.CUSTOM;
-            questList.Add(quest);
-            quest.grid = HexGridModel.Instance.CreateEmptyGrid();
-            crtQuest = quest;
-            crtQuestIndex = 1;
-            quest.Save();
+            CreateQuest();
+            crtQuest.Save();
         }
         else
         {
@@ -43,12 +40,25 @@ public class CustomModel : Singleton<CustomModel>
         }
     }
 
+    public HexQuest CreateQuest()
+    {
+        HexQuest quest = new HexQuest();
+        quest.id = ++CustomModel.MAX_QUEST_ID;
+        quest.type = HexQuestType.CUSTOM;
+        questList.Add(quest);
+        quest.grid = HexGridModel.Instance.CreateEmptyGrid();
+        crtQuest = quest;
+        return quest;
+    }
+
     private void LoadQuestFormFile(string fileName)
     {
         HexQuest quest = new HexQuest();
         quest.type = HexQuestType.CUSTOM;
         quest.Load(fileName);
         questList.Add(quest);
+        crtQuestIndex = questList.Count;
+        CustomModel.MAX_QUEST_ID = Mathf.Max(CustomModel.MAX_QUEST_ID, quest.id);
     }
 
     public void SelectMarker(HexNodeMarker marker)
