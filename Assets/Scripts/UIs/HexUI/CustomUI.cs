@@ -109,7 +109,7 @@ public class CustomUI : UIBase
     {
         foreach(var cell in cells)
         {
-            if (cell.hexNodeData.id == node.id)
+            if (cell.data.id == node.id)
             {
                 cell.UpdateIcon();
                 return;

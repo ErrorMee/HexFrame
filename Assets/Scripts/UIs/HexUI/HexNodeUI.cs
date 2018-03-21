@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HexNodeUI : MonoBehaviour {
 
-    public HexNode hexNodeData;
+    public HexNode data;
 
     public Image icon;
     public Text tip;
@@ -40,13 +40,13 @@ public class HexNodeUI : MonoBehaviour {
 
     public virtual void InitData(HexNode data)
     {
-        hexNodeData = data;
+        this.data = data;
         UpdatePos();
     }
 
     public void UpdatePos()
     {
-        Vector3 position = hexNodeData.GetViewCoord();
+        Vector3 position = data.GetViewCoord();
         transform.localPosition = position;
 
         //ShowTip(hexNodeData.ArrayPosString());

@@ -86,7 +86,7 @@ public class CustomModel : Singleton<CustomModel>
         if (selectNode != null && marker != null)
         {
             int routes = crtQuest.grid.QueryRoute(selectNode, marker);
-            GLog.Log("routes = " + routes);
+            GLog.Log(" routes: " + routes + " steps: " + crtQuest.grid.allStep + " rating: " + crtQuest.grid.rating);
             if (routes < 1)
             {
                 

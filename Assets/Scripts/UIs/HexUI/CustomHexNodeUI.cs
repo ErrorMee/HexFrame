@@ -16,20 +16,22 @@ public class CustomHexNodeUI : HexNodeUI
     {
         base.ClickNode(go);
 
-        CustomModel.Instance.SelectNode(hexNodeData);
+        CustomModel.Instance.SelectNode(data);
     }
 
     public override void UpdateIcon()
     {
         base.UpdateIcon();
 
-        if (hexNodeData.marker.nodeType != HexNodeType.NONE)
+        if (data.marker.nodeType != HexNodeType.NONE)
         {
             icon.color = new Color(1, 1, 1, 1);
+            ShowTip(data.marker.nodeType.ToString());
         }
         else
         {
             icon.color = new Color(1, 1, 1, 0);
+            ShowTip(string.Empty);
         }
     }
 }

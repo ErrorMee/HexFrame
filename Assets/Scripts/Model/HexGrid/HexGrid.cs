@@ -35,7 +35,12 @@ public class HexGrid
     /// <summary>
     /// 要走这么多步才能完成目标~
     /// </summary>
-    private int allStep = 0;
+    public int allStep = 0;
+
+    /// <summary>
+    /// 难度系数3.0
+    /// </summary>
+    public float rating;
 
     /// <summary>
     /// 条条大路通罗马
@@ -143,7 +148,7 @@ public class HexGrid
         {
             tryNode.marker = backupMarker;
         }
-
+        rating = (allStep + 1) * (allStep + 1) / (routes.Count + 1);
         return routes.Count;
     }
 

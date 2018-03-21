@@ -24,4 +24,9 @@ public class GameEventType
 
     //LuaManager初始化结束
     public const string LuaManagerReady = "LuaManagerReady";
+
+    /// <summary>
+    /// 弹出提示
+    /// </summary>
+    public const string PopupTip = "PopupTip";
 }
