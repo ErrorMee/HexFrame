@@ -38,6 +38,4 @@ public class HexGridModel : Singleton<HexGridModel>
         grid.BuildNeighbors();
         return grid;
     }
-
-
 }

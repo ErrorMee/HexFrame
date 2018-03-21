@@ -8,23 +8,27 @@ public enum HexNodeType:int
     /// <summary>
     /// 启动点
     /// </summary>
-    ORIGIN = 1,     
+    ORIGIN = 1,
+    /// <summary>
+    /// 终止点
+    /// </summary>
+    END = 2,     
     /// <summary>
     /// 标准点 通过点
     /// </summary>
-    NORM = 2,
+    NORM = 3,
     /// <summary>
     /// 顺序点
     /// </summary>
-    ORDER = 3,
+    ORDER = 4,
     /// <summary>
     /// 次数点
     /// </summary>
-    FREQUENCY = 4,
+    FREQUENCY = 5,
     /// <summary>
     /// 桥 （只有两个开口 固定 和 动态）难度深挖点
     /// </summary>
-    BRIDGE = 5,
+    BRIDGE = 6,
 }
 
 /// <summary>

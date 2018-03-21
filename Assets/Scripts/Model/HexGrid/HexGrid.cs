@@ -32,6 +32,16 @@ public class HexGrid
     /// </summary>
     public List<List<HexNode>> nodes = new List<List<HexNode>>();
 
+    /// <summary>
+    /// 要走这么多步才能完成目标~
+    /// </summary>
+    private int allStep = 0;
+
+    /// <summary>
+    /// 条条大路通罗马
+    /// </summary>
+    public List<List<HexNode>> routes = new List<List<HexNode>>();
+
     public void InitSize(int _widthMax,int _heightMax)
     {
         widthMax = _widthMax;
@@ -92,5 +102,100 @@ public class HexGrid
             return null;
         }
         return nodes[(int)arrayCoord.y][(int)arrayCoord.x];
+    }
+
+
+    /// <summary>
+    /// 查询路线
+    /// </summary>
+    /// <param name="tryNode"></param>
+    /// <param name="tryMarker"></param>
+    /// <returns></returns>
+    public int QueryRoute(HexNode tryNode = null, HexNodeMarker tryMarker = null)
+    {
+        HexNodeMarker backupMarker = null;
+        if (tryNode != null && tryMarker != null)
+        {
+            backupMarker = tryNode.marker;
+            tryNode.marker = tryMarker;
+        }
+
+        List<HexNode> startNodes = GetNodesByType(HexNodeType.ORIGIN);
+        if (startNodes.Count < 1)
+        {
+            if (tryNode != null && backupMarker != null)
+            {
+                tryNode.marker = backupMarker;
+            }
+            return int.MaxValue;
+        }
+        
+        allStep = GetSteps();
+        Reset();
+        routes = new List<List<HexNode>>();
+        for (int i = 0;i< startNodes.Count;i++)
+        {
+            HexNode startNode = startNodes[i];
+            RecursiveRoute(startNode);
+        }
+
+        if (tryNode != null && backupMarker != null)
+        {
+            tryNode.marker = backupMarker;
+        }
+
+        return routes.Count;
+    }
+
+    private void RecursiveRoute(HexNode node)
+    {
+        List<HexNode> leftNeighbors = node.GetLeftNeighbors();
+        List<HexNode> route = node.GetRoute();
+        if (route.Count == allStep)
+        {
+            routes.Add(route);
+            return;
+        }
+
+        for (int n = 0; n < leftNeighbors.Count; n++)
+        {
+            HexNode neighbor = leftNeighbors[n];
+            node.To(neighbor);
+            RecursiveRoute(neighbor);
+        }
+    }
+
+    public int GetSteps()
+    {
+        int steps = 0;
+        TraversalNodes((node) =>
+        {
+            if (node.marker.nodeType != HexNodeType.NONE)
+            {
+                steps += (int)node.marker.frequency;
+            }
+        });
+        return steps;
+    }
+
+    public List<HexNode> GetNodesByType(HexNodeType type)
+    {
+        List<HexNode> nodes = new List<HexNode>();
+        TraversalNodes((node) =>
+        {
+            if (node.marker.nodeType == type)
+            {
+                nodes.Add(node);
+            }
+        });
+        return nodes;
+    }
+
+    public void Reset()
+    {
+        TraversalNodes((node) =>
+        {
+            node.Reset();
+        });
     }
 }

@@ -43,13 +43,35 @@ public class HexNode
     public HexCoordinates hexCoord;
     
     /// <summary>
-    /// 邻居们
+    /// 邻居们燥起来！
     /// </summary>
     public HexNode[] neighbors = new HexNode[6];
+
+    /// <summary>
+    /// 你从哪里来？
+    /// </summary>
+    public HexNode from;
+
+    /// <summary>
+    /// 你要去哪呀？
+    /// </summary>
+    public HexNode to;
+
+    /// <summary>
+    /// 追溯路径
+    /// </summary>
+    public List<HexNode> route;
 
     public HexNode()
     {
         id = ++MAX_ID;
+    }
+
+    public void Reset()
+    {
+        from = null;
+        to = null;
+        route = null;
     }
 
     /// <summary>
@@ -68,7 +90,80 @@ public class HexNode
             }
         }
     }
-    
+
+    /// <summary>
+    /// 在家的都来轰趴吧
+    /// </summary>
+    /// <returns></returns>
+    public List<HexNode> GetHomeNeighbors()
+    {
+        List<HexNode> homeNeighbors = new List<HexNode>();
+        for (int n = 0; n < neighbors.Length; n++)
+        {
+            HexNode neighbor = neighbors[n];
+            if (neighbor != null && neighbor.marker.nodeType != HexNodeType.NONE)
+            {
+                homeNeighbors.Add(neighbor);
+            }
+        }
+        return homeNeighbors;
+    }
+
+    /// <summary>
+    /// 每家送个大苹果 不能多也不能少
+    /// </summary>
+    /// <returns></returns>
+    public List<HexNode> GetLeftNeighbors()
+    {
+        List<HexNode> route = GetRoute();
+
+        List<HexNode> homeNeighbors = new List<HexNode>();
+        for (int n = 0; n < neighbors.Length; n++)
+        {
+            HexNode neighbor = neighbors[n];
+            if (neighbor != null && neighbor.marker.nodeType != HexNodeType.NONE)
+            {
+                if (!route.Contains(neighbor))
+                {
+                    homeNeighbors.Add(neighbor);
+                }
+            }
+        }
+        return homeNeighbors;
+    }
+
+    public void To(HexNode node)
+    {
+        node.from = this;
+        this.to = node;
+    }
+
+    public void From(HexNode node)
+    {
+        this.from = node;
+        node.to = this;
+    }
+
+    /// <summary>
+    /// 获取路径深度
+    /// </summary>
+    /// <returns></returns>
+    public List<HexNode> GetRoute()
+    {
+        route = new List<HexNode>();
+        RecursiveRoute(this, route);
+        return route;
+    }
+
+    private void RecursiveRoute(HexNode node, List<HexNode> route)
+    {
+        route.Add(node);
+        if (node.from != null)
+        {
+            RecursiveRoute(node.from, route);
+        }
+    }
+
     /// <summary>
     /// 可视化的坐标
     /// </summary>

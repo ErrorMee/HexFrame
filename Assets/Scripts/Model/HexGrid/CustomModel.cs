@@ -68,7 +68,7 @@ public class CustomModel : Singleton<CustomModel>
             return;
         }
         selectMarker = marker;
-        SetMarker(selectNode, selectMarker);
+        SetMarker(selectMarker);
     }
 
     public void SelectNode(HexNode node)
@@ -78,18 +78,29 @@ public class CustomModel : Singleton<CustomModel>
             return;
         }
         selectNode = node;
-        SetMarker(selectNode, selectMarker);
+        SetMarker(selectMarker);
     }
 
-    private void SetMarker(HexNode node, HexNodeMarker marker)
+    private void SetMarker(HexNodeMarker marker)
     {
-        if (node != null && marker != null)
+        if (selectNode != null && marker != null)
         {
-            node.marker = marker;
-            if (updateNodeEvent != null)
+            int routes = crtQuest.grid.QueryRoute(selectNode, marker);
+            GLog.Log("routes = " + routes);
+            if (routes < 1)
             {
-                updateNodeEvent(node);
+                
+            }
+            else
+            {
+                selectNode.marker = marker;
+                if (updateNodeEvent != null)
+                {
+                    updateNodeEvent(selectNode);
+                }
             }
         }
     }
+
+
 }

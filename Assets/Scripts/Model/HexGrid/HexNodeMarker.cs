@@ -67,6 +67,9 @@ public class HexNodeMarker
         //HexNodeType.ORIGIN
         node = CreateMarker(HexNodeType.ORIGIN);
 
+        //HexNodeType.END
+        node = CreateMarker(HexNodeType.END);
+
         //HexNodeType.NORM
         node = CreateMarker(HexNodeType.NORM);
 

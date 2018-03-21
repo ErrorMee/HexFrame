@@ -68,7 +68,8 @@ public class HexQuest
         
         grid.TraversalNodes((node) =>
         {
-            node.marker = HexNodeMarker.MARKERS[br.ReadInt32()];
+            node.marker = HexNodeMarker.MARKERS[br.ReadInt32() - 1];
+            node.Reset();
         });
 
         fs.Close();
