@@ -21,6 +21,8 @@ public class CustomUI : ViewBase
     public Transform nodeList;
     public Transform markerList;
 
+    public Text tip;
+
     private void Awake()
     {
         prefabQuestNew.onValueChanged.AddListener(OnSelectNewHander);
@@ -115,6 +117,10 @@ public class CustomUI : ViewBase
                 return;
             }
         }
+
+        HexQuest crtQuest = CustomModel.Instance.crtQuest;
+
+        tip.text = " route: " + crtQuest.grid.routes.Count + " step: " + crtQuest.grid.allStep + " rating: " + crtQuest.grid.rating;
     }
 
     private void ListHorizontalSliderHander(int dir)

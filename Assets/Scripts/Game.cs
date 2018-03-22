@@ -61,6 +61,7 @@ public class Game : SingletonBehaviour<Game>
 
         UIManager.Instance.OpenUI("GroundView");
         UIManager.Instance.OpenUI("LoginUI");
+        UIManager.Instance.OpenUI("TipsView");
     }
 
 }

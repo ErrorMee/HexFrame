@@ -240,6 +240,8 @@
     <Compile Include="Assets\Scripts\Views\HexView\HexNodeUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\QuestNodeUI.cs" />
     <Compile Include="Assets\Scripts\Views\MainUI.cs" />
+    <Compile Include="Assets\Scripts\Views\TipsView\TipBar.cs" />
+    <Compile Include="Assets\Scripts\Views\TipsView\TipsView.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BufferExtension.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BufferPool.cs" />

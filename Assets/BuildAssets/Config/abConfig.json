@@ -34,6 +34,15 @@
         },
         {
             "id": 4,
+            "ab": "prefabs/ui/top_",
+            "names": [
+                "TipsView"
+            ],
+            "type": "Asset",
+            "allUnload": false
+        },
+        {
+            "id": 5,
             "ab": "uisprite_",
             "names": [
                 "128add",
@@ -47,7 +56,8 @@
                 "frame_02",
                 "logo_01",
                 "logo_16",
-                "logo_17"
+                "logo_17",
+                "tipbar"
             ],
             "type": "Texture",
             "allUnload": false

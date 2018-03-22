@@ -1,0 +1,54 @@
+ManifestFileVersion: 0
+CRC: 609464573
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9a2400fc3945152b50e68ca7852a8677
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 64e3843f4dc17ac03e23ca11ea6284c9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fb0eb602715b87344a230f5769d7915b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5b0b72a35b829204491d477929506278, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1e31d3e4e0534314582f6b66d50d6daa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d6b28559e6babef4a998d24f11479ec7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bbc3997906fa6984f84daa53c9fbbb58, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/BuildAssets/Prefabs/UI/demo/FightUI.prefab
+- Assets/BuildAssets/Prefabs/UI/demo/BagUI.prefab
+- Assets/BuildAssets/Prefabs/UI/demo/LoginUI.prefab
+- Assets/BuildAssets/Prefabs/UI/demo/MainUI.prefab
+Dependencies:
+- F:/StudySpace/GitSpace/HexFrame/Assets/StreamingAssets/patchs/uisprite_.ab

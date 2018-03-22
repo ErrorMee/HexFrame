@@ -47,6 +47,11 @@ public class HexGrid
     /// </summary>
     public List<List<HexNode>> routes = new List<List<HexNode>>();
 
+    /// <summary>
+    /// 终止点
+    /// </summary>
+    public HexNode endNode;
+
     public void InitSize(int _widthMax,int _heightMax)
     {
         widthMax = _widthMax;
@@ -134,7 +139,22 @@ public class HexGrid
             }
             return int.MaxValue;
         }
-        
+
+        endNode = null;
+        List<HexNode> endNodes = GetNodesByType(HexNodeType.END);
+        if (endNodes.Count > 1)
+        {
+            if (tryNode != null && backupMarker != null)
+            {
+                tryNode.marker = backupMarker;
+            }
+            return 0;
+        }
+        else if(endNodes.Count == 1)
+        {
+            endNode = endNodes[0];
+        }
+
         allStep = GetSteps();
         Reset();
         routes = new List<List<HexNode>>();
@@ -158,7 +178,10 @@ public class HexGrid
         List<HexNode> route = node.GetRoute();
         if (route.Count == allStep)
         {
-            routes.Add(route);
+            if (endNode != null && endNode == node)
+            {
+                routes.Add(route);
+            }
             return;
         }
 

@@ -87,10 +87,9 @@ public class CustomModel : Singleton<CustomModel>
         if (selectNode != null && marker != null)
         {
             int routes = crtQuest.grid.QueryRoute(selectNode, marker);
-            GLog.Log(" routes: " + routes + " steps: " + crtQuest.grid.allStep + " rating: " + crtQuest.grid.rating);
             if (routes < 1)
             {
-                
+                GameEvent.PopTip(ColorUtil.ColorString(Color.red, "×"));
             }
             else
             {

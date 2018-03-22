@@ -57,4 +57,13 @@ public static class GameEvent
             }
         }
     }
+
+    public static void PopTip(string tip)
+    {
+        if (string.IsNullOrEmpty(tip))
+        {
+            return;
+        }
+        SendEvent(GameEventType.PopupTip, tip);
+    }
 }

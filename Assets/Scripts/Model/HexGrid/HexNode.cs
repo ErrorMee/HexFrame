@@ -127,6 +127,10 @@ public class HexNode
                 {
                     homeNeighbors.Add(neighbor);
                 }
+                else
+                {
+                    //todo 多次访问的
+                }
             }
         }
         return homeNeighbors;
