@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 8af97bd0d0ad1c8478713f7c8ce92be6
+guid: 91b3c65214e196f44b5856a1e744cc8b
 timeCreated: 1510743375
 licenseType: Free
 NativeFormatImporter:
-  externalObjects: {}
   mainObjectFileID: -1
   userData: 
-  assetBundleName: prefabs/ui_
+  assetBundleName: prefabs/ui/demo_
   assetBundleVariant: ab

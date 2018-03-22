@@ -58,6 +58,8 @@ public class Game : SingletonBehaviour<Game>
     void OnLuaManagerReady(object[] param)
     {
         GameEvent.UnregisterEvent(GameEventType.LuaManagerReady, OnLuaManagerReady);
+
+        UIManager.Instance.OpenUI("GroundView");
         UIManager.Instance.OpenUI("LoginUI");
     }
 

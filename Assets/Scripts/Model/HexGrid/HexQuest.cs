@@ -64,7 +64,7 @@ public class HexQuest
 
         id = br.ReadInt32();
 
-        grid = HexGridModel.Instance.CreateEmptyGrid();
+        grid = HexGridModel.Instance.CreateEmptyGrid(HexGridModel.WIDTH, HexGridModel.HEIGHT);
         
         grid.TraversalNodes((node) =>
         {

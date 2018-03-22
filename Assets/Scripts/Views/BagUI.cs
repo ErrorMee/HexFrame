@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BagUI : UIBase
+public class BagUI : ViewBase
 {
     public Transform closeBtn;
 

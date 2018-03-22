@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,19 +9,44 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     private Transform uiRootT;
 
-    //打开中的UI
-    Dictionary<string,UIBase> m_openedDic = new Dictionary<string, UIBase>();
-    //可恢复的UI
+    /// <summary>
+    /// 打开中的UI
+    /// </summary>
+    Dictionary<string,ViewBase> m_openedDic = new Dictionary<string, ViewBase>();
+
+    /// <summary>
+    /// 可恢复的UI
+    /// </summary>
     List<UIContext> m_recoverList = new List<UIContext>();
+
+    /// <summary>
+    /// UI分层
+    /// </summary>
+    List<Transform> uiLayers = new List<Transform>();
 
     private void Awake()
     {
         uiRootT = Game.Instance.canvasTrans.Find("UIRoot").transform;
+
+        string[] uiLayerNames = Enum.GetNames(typeof(UIType));
+        for (int i = 0; i < uiLayerNames.Length; i++)
+        {
+            string uiLayerName = uiLayerNames[i];
+            GameObject uiLayer = new GameObject();
+            RectTransform rectTranform = uiLayer.AddComponent<RectTransform>();
+            rectTranform.anchorMin = new Vector2();
+            rectTranform.anchorMax = new Vector2(1,1);
+            rectTranform.sizeDelta = new Vector2();
+            GLog.Log(rectTranform.rect.ToString());
+            uiLayer.transform.SetParent(uiRootT, false);
+            uiLayer.name = uiLayerName;
+            uiLayers.Add(uiLayer.transform);
+        }
     }
 
     public void OpenUI(string name)
     {
-        UIBase ui;
+        ViewBase ui;
         if (m_openedDic.TryGetValue(name,out ui))
         {
             OnOpenUI(ui);
@@ -29,7 +55,7 @@ public class UIManager : SingletonBehaviour<UIManager>
         
         ResourceManager.Instance.GetGameObject(name, (obj) =>
         {
-            ui = obj.GetComponent<UIBase>();
+            ui = obj.GetComponent<ViewBase>();
             ui.uiContext.uiName = name;
             //UI内存路线：实例 Dictionary 引用 1
             m_openedDic[name] = ui;
@@ -38,13 +64,18 @@ public class UIManager : SingletonBehaviour<UIManager>
         });
     }
 
-    protected void AttachUI(UIBase ui)
+    protected void AttachUI(ViewBase ui)
     {
         //UI内存路线：实例 显示列表 引用 2
-        ui.transform.SetParent(uiRootT, false);
+        Transform uiLayer = uiLayers[(int)ui.uiContext.uiType];
+        ui.transform.SetParent(uiLayer, false);
     }
-
-    private void OnOpenUI(UIBase ui)
+    
+    /// <summary>
+    /// 打开的如果是全屏界面 关闭其他所有全屏和窗口
+    /// </summary>
+    /// <param name="ui"></param>
+    private void OnOpenUI(ViewBase ui)
     {
         ui.gameObject.SetActive(true);
         if (ui.uiContext.CanRecover())
@@ -62,8 +93,8 @@ public class UIManager : SingletonBehaviour<UIManager>
 
             if (ui.uiContext.uiType == UIType.FULL)
             {
-                HashSet<UIBase> removeList = new HashSet<UIBase>();
-                foreach (UIBase uiBase in m_openedDic.Values)
+                HashSet<ViewBase> removeList = new HashSet<ViewBase>();
+                foreach (ViewBase uiBase in m_openedDic.Values)
                 {
                     if (uiBase.uiContext.CanRecover() && ui.uiContext.uiName != uiBase.uiContext.uiName)
                     {
@@ -71,7 +102,7 @@ public class UIManager : SingletonBehaviour<UIManager>
                     }
                 }
 
-                foreach (UIBase item in removeList)
+                foreach (ViewBase item in removeList)
                 {
                     OnCloseUI(item);
                 }
@@ -84,9 +115,14 @@ public class UIManager : SingletonBehaviour<UIManager>
         }
     }
 
+    /// <summary>
+    /// 关闭的如果是全屏的话 恢复前一个全屏和窗口
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public bool CloseUI(string name)
     {
-        UIBase ui;
+        ViewBase ui;
         if (m_openedDic.TryGetValue(name, out ui))
         {
             OnCloseUI(ui);
@@ -127,7 +163,7 @@ public class UIManager : SingletonBehaviour<UIManager>
         return false;
     }
 
-    private void OnCloseUI(UIBase ui)
+    private void OnCloseUI(ViewBase ui)
     {
         m_openedDic.Remove(ui.uiContext.uiName);
         ResourceManager.Instance.DestroyGameObj(ui.gameObject);

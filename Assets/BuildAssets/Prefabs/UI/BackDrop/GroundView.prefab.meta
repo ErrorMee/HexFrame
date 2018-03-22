@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 91b3c65214e196f44b5856a1e744cc8b
+guid: 3518da764467b2a42b0b281a94f24062
 timeCreated: 1510743375
 licenseType: Free
 NativeFormatImporter:
-  externalObjects: {}
   mainObjectFileID: -1
   userData: 
-  assetBundleName: prefabs/ui_
+  assetBundleName: prefabs/ui/backdrop_
   assetBundleVariant: ab

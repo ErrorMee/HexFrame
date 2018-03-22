@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class CustomUI : UIBase
+public class CustomUI : ViewBase
 {
     public QuestNodeUI prefabQuest;
     public Toggle prefabQuestNew;

@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.1.2p3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -211,8 +209,8 @@
     <Compile Include="Assets\Scripts\Managers\SDKManager\SDKManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager\base\SimplePageList.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager\base\SimpleScrollList.cs" />
-    <Compile Include="Assets\Scripts\Managers\UIManager\UIBase.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager\ViewBase.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\CustomModel.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexConst.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexGrid.cs" />
@@ -220,14 +218,6 @@
     <Compile Include="Assets\Scripts\Model\HexGrid\HexNode.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexNodeMarker.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexQuest.cs" />
-    <Compile Include="Assets\Scripts\UIs\BagUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\FightUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\HexUI\CustomHexNodeUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\HexUI\CustomUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\HexUI\HexNodeMarkerUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\HexUI\HexNodeUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\HexUI\QuestNodeUI.cs" />
-    <Compile Include="Assets\Scripts\UIs\MainUI.cs" />
     <Compile Include="Assets\Scripts\Util\ColorUtil.cs" />
     <Compile Include="Assets\Scripts\Util\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\Util\EncryptUtil.cs" />
@@ -241,6 +231,15 @@
     <Compile Include="Assets\Scripts\Util\Singleton.cs" />
     <Compile Include="Assets\Scripts\Util\SliderUtil.cs" />
     <Compile Include="Assets\Scripts\Util\StringUtil.cs" />
+    <Compile Include="Assets\Scripts\Views\BagUI.cs" />
+    <Compile Include="Assets\Scripts\Views\FightUI.cs" />
+    <Compile Include="Assets\Scripts\Views\GroundView.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\CustomHexNodeUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\CustomUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\HexNodeMarkerUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\HexNodeUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\QuestNodeUI.cs" />
+    <Compile Include="Assets\Scripts\Views\MainUI.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BufferExtension.cs" />
     <Compile Include="Assets\ThirdParty\protobuf-net\BufferPool.cs" />

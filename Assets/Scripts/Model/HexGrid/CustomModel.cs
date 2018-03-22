@@ -46,7 +46,8 @@ public class CustomModel : Singleton<CustomModel>
         quest.id = ++CustomModel.MAX_QUEST_ID;
         quest.type = HexQuestType.CUSTOM;
         questList.Add(quest);
-        quest.grid = HexGridModel.Instance.CreateEmptyGrid();
+        crtQuestIndex = questList.Count;
+        quest.grid = HexGridModel.Instance.CreateEmptyGrid(HexGridModel.WIDTH, HexGridModel.HEIGHT);
         crtQuest = quest;
         return quest;
     }
@@ -68,7 +69,7 @@ public class CustomModel : Singleton<CustomModel>
             return;
         }
         selectMarker = marker;
-        SetMarker(selectMarker);
+        //SetMarker(selectMarker);
     }
 
     public void SelectNode(HexNode node)

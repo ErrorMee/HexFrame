@@ -18,10 +18,10 @@ public class HexGridModel : Singleton<HexGridModel>
         HexNodeMarker.CreateMarkers();
     }
 
-    public HexGrid CreateEmptyGrid()
+    public HexGrid CreateEmptyGrid(int width,int height)
     {
         HexGrid grid = new HexGrid();
-        grid.InitSize(WIDTH, HEIGHT);
+        grid.InitSize(width, height);
 
         for (int y = 0; y < grid.heightMax; y++)
         {

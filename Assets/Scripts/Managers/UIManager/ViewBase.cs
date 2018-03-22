@@ -3,11 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIType
+public enum UIType:int
 {
-    FULL,   //全屏
-    WINDOW, //窗口
-    PENDANT //挂件
+    /// <summary>
+    /// 背景层
+    /// </summary>
+    BEAKDROP = 0,
+    /// <summary>
+    /// 全屏
+    /// </summary>
+    FULL,
+    /// <summary>
+    /// 窗口
+    /// </summary>
+    WINDOW,
+    /// <summary>
+    /// 上层
+    /// </summary>
+    TOP
 }
 
 [Serializable]
@@ -15,7 +28,7 @@ public class UIContext
 {
     [HideInInspector]
     public string uiName;
-    public UIType uiType;
+    public UIType uiType = UIType.FULL;
 
     public UIContext Clone()
     {
@@ -36,9 +49,14 @@ public class UIContext
 }
 
 [DisallowMultipleComponent]
-public class UIBase : MonoBehaviour
+public class ViewBase : MonoBehaviour
 {
     public UIContext uiContext;
+
+    private void Awake()
+    {
+        
+    }
 
     protected void CloseSelf()
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class FightUI : UIBase
+public class FightUI : ViewBase
 {
     public Transform closeBtn;
 

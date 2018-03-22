@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainUI : UIBase
+public class MainUI : ViewBase
 {
     public Transform bagBtn;
     public Transform fightBtn;
