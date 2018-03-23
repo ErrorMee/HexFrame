@@ -39,11 +39,9 @@ public class CustomUI : ViewBase
     IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();
-
-        quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
-
         CreateMarkerList();
         CreateCustomList();
+        quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
     }
 
     private void InitQuestList()

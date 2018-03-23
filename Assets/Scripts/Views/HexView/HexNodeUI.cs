@@ -42,6 +42,7 @@ public class HexNodeUI : MonoBehaviour {
     {
         this.data = data;
         UpdatePos();
+        UpdateIcon();
     }
 
     public void UpdatePos()
