@@ -24,6 +24,8 @@ public class HexQuest
 
     public HexGrid grid;
 
+    public bool needSave;
+
     public HexQuest()
     {
     }

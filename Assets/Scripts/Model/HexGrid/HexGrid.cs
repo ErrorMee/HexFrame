@@ -143,7 +143,7 @@ public class HexGrid
         endNode = null;
         List<HexNode> endNodes = GetNodesByType(HexNodeType.END);
         if (endNodes.Count > 1)
-        {
+        {//终点不可以大于一个
             if (tryNode != null && backupMarker != null)
             {
                 tryNode.marker = backupMarker;
@@ -174,11 +174,20 @@ public class HexGrid
 
     private void RecursiveRoute(HexNode node)
     {
-        List<HexNode> leftNeighbors = node.GetLeftNeighbors();
         List<HexNode> route = node.GetRoute();
+
+        List<HexNode> leftNeighbors = node.GetLeftNeighbors(route);
+        
         if (route.Count == allStep)
         {
-            if (endNode != null && endNode == node)
+            if (endNode != null)
+            {
+                if (endNode == node)
+                {
+                    routes.Add(route);
+                }
+            }
+            else
             {
                 routes.Add(route);
             }
@@ -188,6 +197,17 @@ public class HexGrid
         for (int n = 0; n < leftNeighbors.Count; n++)
         {
             HexNode neighbor = leftNeighbors[n];
+            if (neighbor.marker.nodeType == HexNodeType.ORDER)
+            {//顺序点处理
+                HexNode lastOrderNode = node.GetLastOrderInRoute(route);
+                if (lastOrderNode != null)
+                {
+                    if (lastOrderNode.marker.order + 1 != neighbor.marker.order)
+                    {
+                        continue;
+                    }
+                }
+            }
             node.To(neighbor);
             RecursiveRoute(neighbor);
         }

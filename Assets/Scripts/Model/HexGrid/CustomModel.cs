@@ -28,7 +28,7 @@ public class CustomModel : Singleton<CustomModel>
         if (questList.Count < 1)
         {
             CreateQuest();
-            crtQuest.Save();
+            AttemptSave();
         }
         else
         {
@@ -45,6 +45,7 @@ public class CustomModel : Singleton<CustomModel>
         HexQuest quest = new HexQuest();
         quest.id = ++CustomModel.MAX_QUEST_ID;
         quest.type = HexQuestType.CUSTOM;
+        quest.needSave = true;
         questList.Add(quest);
         crtQuestIndex = questList.Count;
         quest.grid = HexGridModel.Instance.CreateEmptyGrid(HexGridModel.WIDTH, HexGridModel.HEIGHT);
@@ -96,11 +97,19 @@ public class CustomModel : Singleton<CustomModel>
                 selectNode.marker = marker;
                 if (updateNodeEvent != null)
                 {
+                    crtQuest.needSave = true;
                     updateNodeEvent(selectNode);
                 }
             }
         }
     }
 
-
+    public void AttemptSave()
+    {
+        if (crtQuest.needSave)
+        {
+            crtQuest.needSave = false;
+            crtQuest.Save();
+        }
+    }
 }

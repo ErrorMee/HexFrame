@@ -143,7 +143,7 @@ public class AssetManager : SingletonBehaviour<AssetManager>
             }
             else
             {
-                abInfo.BackAsset(abName);
+                yield break;
             }
         }
         else

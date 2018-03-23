@@ -11,7 +11,6 @@ public class CustomUI : ViewBase
     public List<QuestNodeUI> quests = new List<QuestNodeUI>();
     public SliderUtil listSliderUtil;
     
-    public RectTransform hexNodeListRTF;
     public CustomHexNodeUI prefabCustom;
     private List<CustomHexNodeUI> cells = new List<CustomHexNodeUI>();
 
@@ -102,9 +101,19 @@ public class CustomUI : ViewBase
     {
         CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefabCustom);
         cells.Add(cell);
-        cell.transform.SetParent(hexNodeListRTF, false);
+        cell.transform.SetParent(nodeList, false);
         
         cell.InitData(node);
+    }
+
+    private void UpdateCustomList()
+    {
+        int index = 0;
+        CustomModel.Instance.crtQuest.grid.TraversalNodes(
+            node => {
+                CustomHexNodeUI cell = cells[index];
+                cell.InitData(node);
+            });
     }
 
     private void OnNodeUpdate(HexNode node)
@@ -114,13 +123,11 @@ public class CustomUI : ViewBase
             if (cell.data.id == node.id)
             {
                 cell.UpdateIcon();
+                HexQuest crtQuest = CustomModel.Instance.crtQuest;
+                tip.text = " route: " + crtQuest.grid.routes.Count + " step: " + crtQuest.grid.allStep + " rating: " + crtQuest.grid.rating;
                 return;
             }
         }
-
-        HexQuest crtQuest = CustomModel.Instance.crtQuest;
-
-        tip.text = " route: " + crtQuest.grid.routes.Count + " step: " + crtQuest.grid.allStep + " rating: " + crtQuest.grid.rating;
     }
 
     private void ListHorizontalSliderHander(int dir)
@@ -155,6 +162,8 @@ public class CustomUI : ViewBase
 
     private void OnSelectQuest()
     {
+        tip.text = "";
+        UpdateCustomList();
         newButton.gameObject.SetActive(false);
         nodeList.gameObject.SetActive(true);
         markerList.gameObject.SetActive(true);

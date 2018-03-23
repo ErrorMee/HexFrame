@@ -113,9 +113,12 @@ public class HexNode
     /// 每家送个大苹果 不能多也不能少
     /// </summary>
     /// <returns></returns>
-    public List<HexNode> GetLeftNeighbors()
+    public List<HexNode> GetLeftNeighbors(List<HexNode> route)
     {
-        List<HexNode> route = GetRoute();
+        if (route == null)
+        {
+            route = GetRoute();
+        }
 
         List<HexNode> homeNeighbors = new List<HexNode>();
         for (int n = 0; n < neighbors.Length; n++)
@@ -146,6 +149,27 @@ public class HexNode
     {
         this.from = node;
         node.to = this;
+    }
+
+    /// <summary>
+    /// 获取最近的顺序点
+    /// </summary>
+    /// <returns></returns>
+    public HexNode GetLastOrderInRoute(List<HexNode> route)
+    {
+        if (route == null)
+        {
+            route = GetRoute();
+        }
+
+        for (int i = 0; i < route.Count; i++)
+        {
+            if(route[i].marker.nodeType == HexNodeType.ORDER)
+            {
+                return route[i];
+            }
+        }
+        return null;
     }
 
     /// <summary>
