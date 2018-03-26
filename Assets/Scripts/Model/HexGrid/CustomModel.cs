@@ -40,6 +40,11 @@ public class CustomModel : Singleton<CustomModel>
         }
     }
 
+    public void UpdateCrtQuest()
+    {
+        crtQuest = questList[crtQuestIndex - 1];
+    }
+
     public HexQuest CreateQuest()
     {
         HexQuest quest = new HexQuest();

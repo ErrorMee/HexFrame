@@ -111,6 +111,7 @@ public class CustomUI : ViewBase
             node => {
                 CustomHexNodeUI cell = cells[index];
                 cell.InitData(node);
+                index++;
             });
     }
 
@@ -130,6 +131,7 @@ public class CustomUI : ViewBase
 
     private void ListHorizontalSliderHander(int dir)
     {
+        
         CustomModel.Instance.crtQuestIndex = CustomModel.Instance.crtQuestIndex + dir;
 
         if (CustomModel.Instance.crtQuestIndex > CustomModel.Instance.questList.Count)
@@ -160,6 +162,9 @@ public class CustomUI : ViewBase
 
     private void OnSelectQuest()
     {
+        CustomModel.Instance.AttemptSave();
+        CustomModel.Instance.UpdateCrtQuest();
+
         tip.text = "";
         UpdateCustomList();
         newButton.gameObject.SetActive(false);
