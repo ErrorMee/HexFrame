@@ -60,7 +60,7 @@ public class Game : SingletonBehaviour<Game>
         GameEvent.UnregisterEvent(GameEventType.LuaManagerReady, OnLuaManagerReady);
 
         UIManager.Instance.OpenUI("GroundView");
-        UIManager.Instance.OpenUI("LoginUI");
+        UIManager.Instance.OpenUI("MainView");
         UIManager.Instance.OpenUI("TipsView");
     }
 

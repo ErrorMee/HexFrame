@@ -26,8 +26,9 @@
             "ab": "prefabs/ui/hexui_",
             "names": [
                 "CustomHexNodeUI",
-                "CustomUI",
-                "HexNodeUI"
+                "CustomView",
+                "HexNodeUI",
+                "MainView"
             ],
             "type": "Asset",
             "allUnload": false

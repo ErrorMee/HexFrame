@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class CustomUI : ViewBase
+public class CustomView : ViewBase
 {
     public QuestNodeUI prefabQuest;
     public Toggle prefabQuestNew;
@@ -22,8 +22,12 @@ public class CustomUI : ViewBase
 
     public Text tip;
 
+    public Transform homeBtn;
+
     private void Awake()
     {
+        EventTriggerListener.Get(homeBtn.gameObject).onClick = OnClickHomeBtn;
+
         prefabQuestNew.onValueChanged.AddListener(OnSelectNewHander);
 
         listSliderUtil.SetHorizontalSlid(ListHorizontalSliderHander);
@@ -36,6 +40,12 @@ public class CustomUI : ViewBase
         InitQuestList();
     }
 
+    private void OnClickHomeBtn(GameObject go)
+    {
+        CustomModel.Instance.AttemptSave();
+        UIManager.Instance.OpenUI("MainView");
+    }
+    
     IEnumerator Start()
     {
         yield return new WaitForEndOfFrame();
@@ -110,6 +120,7 @@ public class CustomUI : ViewBase
         CustomModel.Instance.crtQuest.grid.TraversalNodes(
             node => {
                 CustomHexNodeUI cell = cells[index];
+                cell.toggle.isOn = false;
                 cell.InitData(node);
                 index++;
             });
@@ -153,6 +164,7 @@ public class CustomUI : ViewBase
     {
         if (select)
         {
+            CustomModel.Instance.AttemptSave();
             CustomModel.Instance.crtQuestIndex = CustomModel.Instance.questList.Count + 1;
             newButton.gameObject.SetActive(true);
             nodeList.gameObject.SetActive(false);

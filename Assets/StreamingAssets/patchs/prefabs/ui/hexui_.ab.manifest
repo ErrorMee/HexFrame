@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 494487125
+CRC: 2415240173
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2ee2fbcafda8259ddc09575e7a144d60
+    Hash: 35d657aa650d6c287cd4df9228789c52
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3d444e79b8938454fc9b14751fb9cb9d
+    Hash: 3a611a34e3788fac5558e7d2aa43ae17
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -47,6 +47,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 43ca9b2c9e8c2ae4a81f8954a706d898, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d96f1fdc256f9af46bb5248193266d2c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6609ac4fa6fdf4841a49ebb32fdf7524, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -58,7 +60,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/BuildAssets/Prefabs/UI/HexUI/CustomUI.prefab
+- Assets/BuildAssets/Prefabs/UI/HexUI/CustomView.prefab
+- Assets/BuildAssets/Prefabs/UI/HexUI/MainView.prefab
 - Assets/BuildAssets/Prefabs/UI/HexUI/CustomHexNodeUI.prefab
 - Assets/BuildAssets/Prefabs/UI/HexUI/HexNodeUI.prefab
 Dependencies:

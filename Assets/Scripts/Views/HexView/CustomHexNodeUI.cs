@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class CustomHexNodeUI : HexNodeUI
 {
+    public Toggle toggle;
 
     protected override void Awake()
     {

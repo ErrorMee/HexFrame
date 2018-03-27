@@ -22,7 +22,7 @@ function start()
 	CS.EventTriggerListener.Get(loginBtn.gameObject).onClick = OnClickLogin;
 
 	CS.UnityEngine.PlayerPrefs.SetString("account",accountTxt.text);
-	CS.UIManager.Instance:OpenUI("CustomUI");
+	
 end
 
 function update()

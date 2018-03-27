@@ -58,9 +58,21 @@ public class HexNode
     public HexNode to;
 
     /// <summary>
+    /// 你从哪里来？add
+    /// </summary>
+    public HexNode fromAdd;
+
+    /// <summary>
+    /// 你要去哪呀？add
+    /// </summary>
+    public HexNode toAdd;
+
+    /// <summary>
     /// 追溯路径
     /// </summary>
     public List<HexNode> route;
+
+    public bool routeAddFlage;
 
     public HexNode()
     {
@@ -110,7 +122,7 @@ public class HexNode
     }
 
     /// <summary>
-    /// 每家送个大苹果 不能多也不能少
+    /// 每家送个大苹果(也有可能送两个) 不能多也不能少
     /// </summary>
     /// <returns></returns>
     public List<HexNode> GetLeftNeighbors(List<HexNode> route)
@@ -120,7 +132,7 @@ public class HexNode
             route = GetRoute();
         }
 
-        List<HexNode> homeNeighbors = new List<HexNode>();
+        List<HexNode> leftNeighbors = new List<HexNode>();
         for (int n = 0; n < neighbors.Length; n++)
         {
             HexNode neighbor = neighbors[n];
@@ -128,15 +140,22 @@ public class HexNode
             {
                 if (!route.Contains(neighbor))
                 {
-                    homeNeighbors.Add(neighbor);
+                    leftNeighbors.Add(neighbor);
                 }
                 else
-                {
-                    //todo 多次访问的
+                {   //在路径中出现过
+                    if (neighbor.marker.nodeType == HexNodeType.FREQUENCY)
+                    {
+                        List<HexNode> routeAll = route.FindAll((routenode) => { return routenode == neighbor; });
+                        if (routeAll.Count == 1)
+                        {
+                            leftNeighbors.Add(neighbor);
+                        }
+                    }
                 }
             }
         }
-        return homeNeighbors;
+        return leftNeighbors;
     }
 
     public void To(HexNode node)
@@ -150,7 +169,19 @@ public class HexNode
         this.from = node;
         node.to = this;
     }
+    
+    public void ToAdd(HexNode node)
+    {
+        node.fromAdd = this;
+        this.toAdd = node;
+    }
 
+    public void FromAdd(HexNode node)
+    {
+        this.fromAdd = node;
+        node.toAdd = this;
+    }
+    
     /// <summary>
     /// 获取最近的顺序点
     /// </summary>
@@ -178,6 +209,9 @@ public class HexNode
     /// <returns></returns>
     public List<HexNode> GetRoute()
     {
+        HexGridModel.Instance.crtGrid.TraversalNodes(
+            (node) =>
+            { node.routeAddFlage = false; });
         route = new List<HexNode>();
         RecursiveRoute(this, route);
         return route;
@@ -186,9 +220,27 @@ public class HexNode
     private void RecursiveRoute(HexNode node, List<HexNode> route)
     {
         route.Add(node);
-        if (node.from != null)
+
+        if (node.fromAdd != null)
         {
-            RecursiveRoute(node.from, route);
+            if (node.routeAddFlage == false)
+            {
+                node.routeAddFlage = true;
+                RecursiveRoute(node.fromAdd, route);
+            }
+            else
+            {
+                if (node.from != null)
+                {
+                    RecursiveRoute(node.from, route);
+                }
+            }
+        }
+        else {
+            if (node.from != null)
+            {
+                RecursiveRoute(node.from, route);
+            }
         }
     }
 

@@ -208,7 +208,21 @@ public class HexGrid
                     }
                 }
             }
-            node.To(neighbor);
+            if (neighbor.marker.nodeType == HexNodeType.FREQUENCY)
+            {
+                if (route.Contains(neighbor))
+                {
+                    node.ToAdd(neighbor);
+                }
+                else
+                {
+                    node.To(neighbor);
+                }
+            } else
+            {
+                node.To(neighbor);
+            }
+            
             RecursiveRoute(neighbor);
         }
     }

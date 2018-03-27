@@ -6,12 +6,10 @@ using System;
 public class HexGridModel : Singleton<HexGridModel>
 {
     
-    public static int WIDTH = 2;
-    public static int HEIGHT = 2;
+    public static int WIDTH = 7;
+    public static int HEIGHT = 9;
 
-    public static float VIEW_HEIGHT = (HEIGHT - 0.5f) * 0.5f * HexConst.height;
-
-    public HexGrid grid;
+    public HexGrid crtGrid;
 
     public void Init()
     {
@@ -21,6 +19,7 @@ public class HexGridModel : Singleton<HexGridModel>
     public HexGrid CreateEmptyGrid(int width,int height)
     {
         HexGrid grid = new HexGrid();
+        crtGrid = grid;
         grid.InitSize(width, height);
 
         for (int y = 0; y < grid.heightMax; y++)

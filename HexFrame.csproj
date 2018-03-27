@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.1.2p3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -235,10 +237,14 @@
     <Compile Include="Assets\Scripts\Views\FightUI.cs" />
     <Compile Include="Assets\Scripts\Views\GroundView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\CustomHexNodeUI.cs" />
-    <Compile Include="Assets\Scripts\Views\HexView\CustomUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\CustomView.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\FinishView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\HexNodeMarkerUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\HexNodeUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\MainView.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\PauseView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\QuestNodeUI.cs" />
+    <Compile Include="Assets\Scripts\Views\HexView\QuestView.cs" />
     <Compile Include="Assets\Scripts\Views\MainUI.cs" />
     <Compile Include="Assets\Scripts\Views\TipsView\TipBar.cs" />
     <Compile Include="Assets\Scripts\Views\TipsView\TipsView.cs" />
