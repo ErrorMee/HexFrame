@@ -43,7 +43,7 @@ public class HexNode
     public HexCoordinates hexCoord;
     
     /// <summary>
-    /// 邻居们燥起来！
+    /// 邻居们燥起来！666
     /// </summary>
     public HexNode[] neighbors = new HexNode[6];
 
@@ -133,6 +133,9 @@ public class HexNode
         }
 
         List<HexNode> leftNeighbors = new List<HexNode>();
+
+        //todo brige
+
         for (int n = 0; n < neighbors.Length; n++)
         {
             HexNode neighbor = neighbors[n];
@@ -140,7 +143,22 @@ public class HexNode
             {
                 if (!route.Contains(neighbor))
                 {
-                    leftNeighbors.Add(neighbor);
+                    if (neighbor.marker.nodeType == HexNodeType.BRIDGE)
+                    {
+                        HexNodeDir dir = neighbor.GetNeighborDir(this);
+                        for (int e = 0; e < neighbor.marker.entrances.Count; e++)
+                        {
+                            if (neighbor.marker.entrances[e] == dir)
+                            {
+                                leftNeighbors.Add(neighbor);
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        leftNeighbors.Add(neighbor);
+                    }
                 }
                 else
                 {   //在路径中出现过
@@ -156,6 +174,28 @@ public class HexNode
             }
         }
         return leftNeighbors;
+    }
+
+    /// <summary>
+    /// 到邻居的方向
+    /// </summary>
+    /// <param name="neighborTo"></param>
+    /// <returns></returns>
+    public HexNodeDir GetNeighborDir(HexNode neighborTo)
+    {
+        if (neighborTo == null)
+        {
+            return HexNodeDir.NONE;
+        }
+        for (int i = 0;i<neighbors.Length;i++)
+        {
+            HexNode neighbor = neighbors[i];
+            if (neighborTo == neighbor)
+            {
+                return (HexNodeDir)(i + 1);
+            }
+        }
+        return HexNodeDir.NONE;
     }
 
     public void To(HexNode node)
