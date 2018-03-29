@@ -58,6 +58,11 @@ public class ViewBase : MonoBehaviour
         
     }
 
+    public virtual void OnOpen()
+    {
+
+    }
+
     protected void CloseSelf()
     {
         UIManager.Instance.CloseUI(uiContext.uiName);

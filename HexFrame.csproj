@@ -220,6 +220,7 @@
     <Compile Include="Assets\Scripts\Model\HexGrid\HexNode.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexNodeMarker.cs" />
     <Compile Include="Assets\Scripts\Model\HexGrid\HexQuest.cs" />
+    <Compile Include="Assets\Scripts\Model\HexGrid\MainQuestModel.cs" />
     <Compile Include="Assets\Scripts\Util\ColorUtil.cs" />
     <Compile Include="Assets\Scripts\Util\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\Util\EncryptUtil.cs" />
@@ -238,11 +239,9 @@
     <Compile Include="Assets\Scripts\Views\GroundView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\CustomHexNodeUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\CustomView.cs" />
-    <Compile Include="Assets\Scripts\Views\HexView\FinishView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\HexNodeMarkerUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\HexNodeUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\MainView.cs" />
-    <Compile Include="Assets\Scripts\Views\HexView\PauseView.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\QuestNodeUI.cs" />
     <Compile Include="Assets\Scripts\Views\HexView\QuestView.cs" />
     <Compile Include="Assets\Scripts\Views\MainUI.cs" />

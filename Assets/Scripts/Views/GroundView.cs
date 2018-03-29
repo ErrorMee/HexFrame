@@ -46,7 +46,7 @@ public class GroundView : ViewBase
             }
         }
 
-        cell.color = new Color(cell.color.r, cell.color.g, cell.color.b, cell.color.a + 0.02f * v);
+        cell.color = new Color(cell.color.r + 0.001f * v, cell.color.g + 0.001f * v, cell.color.b + 0.001f * v, cell.color.a + 0.02f * v);
 
         //cell.isStatic = true;
     }

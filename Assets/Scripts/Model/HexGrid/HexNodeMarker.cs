@@ -96,7 +96,7 @@ public class HexNodeMarker
         //动态 单通桥
         node = CreateMarker(HexNodeType.BRIDGE);
         node.entrances = new List<HexNodeDir> { HexNodeDir.ALL };
-        node.exits = new List<HexNodeDir> { HexNodeDir.OPPOSITE };
+        node.exits = new List<HexNodeDir> { HexNodeDir.OPPOSITE, HexNodeDir.NONE };
 
     }
 

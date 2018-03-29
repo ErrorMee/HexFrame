@@ -134,21 +134,35 @@ public class HexNode
 
         List<HexNode> leftNeighbors = new List<HexNode>();
 
-        //todo brige
-
         for (int n = 0; n < neighbors.Length; n++)
         {
             HexNode neighbor = neighbors[n];
+
+            bool findExit = false;
+            HexNodeDir dirThis = GetNeighborDir(neighbor);
+            for (int ex = 0; ex < marker.exits.Count; ex++)
+            {
+                if (marker.exits[ex] == dirThis || marker.exits[ex] == HexNodeDir.ALL)
+                {
+                    findExit = true;
+                    break;
+                }
+            }
+            if (findExit == false)
+            {
+                continue;
+            }
+
             if (neighbor != null && neighbor.marker.nodeType != HexNodeType.NONE)
             {
                 if (!route.Contains(neighbor))
                 {
                     if (neighbor.marker.nodeType == HexNodeType.BRIDGE)
                     {
-                        HexNodeDir dir = neighbor.GetNeighborDir(this);
-                        for (int e = 0; e < neighbor.marker.entrances.Count; e++)
+                        HexNodeDir dirNeighbor = neighbor.GetNeighborDir(this);
+                        for (int en = 0; en < neighbor.marker.entrances.Count; en++)
                         {
-                            if (neighbor.marker.entrances[e] == dir)
+                            if (neighbor.marker.entrances[en] == dirNeighbor || neighbor.marker.entrances[en] == HexNodeDir.ALL)
                             {
                                 leftNeighbors.Add(neighbor);
                                 break;
@@ -201,25 +215,21 @@ public class HexNode
     public void To(HexNode node)
     {
         node.from = this;
+        if (node.marker.exits.Contains(HexNodeDir.OPPOSITE))
+        {
+            node.marker.exits[1] = this.GetNeighborDir(node);
+        }
         this.to = node;
-    }
-
-    public void From(HexNode node)
-    {
-        this.from = node;
-        node.to = this;
     }
     
     public void ToAdd(HexNode node)
     {
         node.fromAdd = this;
+        if (node.marker.exits.Contains(HexNodeDir.OPPOSITE))
+        {
+            node.marker.exits[1] = this.GetNeighborDir(node);
+        }
         this.toAdd = node;
-    }
-
-    public void FromAdd(HexNode node)
-    {
-        this.fromAdd = node;
-        node.toAdd = this;
     }
     
     /// <summary>

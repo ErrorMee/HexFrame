@@ -78,6 +78,7 @@ public class UIManager : SingletonBehaviour<UIManager>
     private void OnOpenUI(ViewBase ui)
     {
         ui.gameObject.SetActive(true);
+        ui.OnOpen();
         if (ui.uiContext.CanRecover())
         {
             bool isNew = true;

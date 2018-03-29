@@ -28,7 +28,8 @@
                 "CustomHexNodeUI",
                 "CustomView",
                 "HexNodeUI",
-                "MainView"
+                "MainView",
+                "QuestView"
             ],
             "type": "Asset",
             "allUnload": false

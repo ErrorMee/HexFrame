@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2415240173
+CRC: 3979739676
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 35d657aa650d6c287cd4df9228789c52
+    Hash: b1f4ce83e1d02d5ad0398a4c3770c7e5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 3a611a34e3788fac5558e7d2aa43ae17
+    Hash: 25a383d75d574cd7e37951f7932deef5
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -21,6 +21,8 @@ ClassTypes:
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -37,6 +39,8 @@ ClassTypes:
   Script: {fileID: -1184210157, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cfd3d9c3452ffcc4e8771ee2ffd47bfe, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d95b4316210d6514db3ee319c43d7519, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 01b6c717cdb146649917e766a7c3df3b, type: 3}
 - Class: 114
@@ -64,5 +68,6 @@ Assets:
 - Assets/BuildAssets/Prefabs/UI/HexUI/MainView.prefab
 - Assets/BuildAssets/Prefabs/UI/HexUI/CustomHexNodeUI.prefab
 - Assets/BuildAssets/Prefabs/UI/HexUI/HexNodeUI.prefab
+- Assets/BuildAssets/Prefabs/UI/HexUI/QuestView.prefab
 Dependencies:
 - F:/StudySpace/GitSpace/HexFrame/Assets/StreamingAssets/patchs/uisprite_.ab

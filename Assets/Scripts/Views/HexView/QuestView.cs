@@ -6,16 +6,16 @@ using System;
 
 public class QuestView : ViewBase
 {
-    public Transform pauseBtn;
+    public Transform homeButton;
 
     private void Awake()
     {
-        EventTriggerListener.Get(pauseBtn.gameObject).onClick = OnClickPauseBtn;
+        EventTriggerListener.Get(homeButton.gameObject).onClick = OnClickHomeBtn;
     }
 
-    private void OnClickPauseBtn(GameObject go)
+    private void OnClickHomeBtn(GameObject go)
     {
-        UIManager.Instance.OpenUI("PauseView");
+        UIManager.Instance.OpenUI("HomeView");
     }
 
 }

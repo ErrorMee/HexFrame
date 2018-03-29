@@ -12,7 +12,7 @@ public class QuestNodeUI : MonoBehaviour
 
     public Toggle toggle;
 
-    public Action onSelect;
+    public Action<HexQuest> onSelect;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class QuestNodeUI : MonoBehaviour
         {
             if (onSelect != null)
             {
-                onSelect();
+                onSelect(data);
             }
         }
     }

@@ -35,9 +35,9 @@ public class CustomView : ViewBase
         CustomModel.Instance.updateNodeEvent = OnNodeUpdate;
 
         EventTriggerListener.Get(newButton.gameObject).onClick = OnNewButtonClick;
-
-        CustomModel.Instance.Init();
+        
         InitQuestList();
+        CreateCustomList();
     }
 
     private void OnClickHomeBtn(GameObject go)
@@ -50,8 +50,11 @@ public class CustomView : ViewBase
     {
         yield return new WaitForEndOfFrame();
         CreateMarkerList();
-        CreateCustomList();
-        quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
+    }
+
+    private void OnEnable()
+    {
+        ShowQuest();
     }
 
     private void InitQuestList()
@@ -145,6 +148,18 @@ public class CustomView : ViewBase
         
         CustomModel.Instance.crtQuestIndex = CustomModel.Instance.crtQuestIndex + dir;
 
+        ShowQuest();
+    }
+
+    private void ShowQuest()
+    {
+        prefabQuestNew.group.SetAllTogglesOff();
+        StartCoroutine(DelayShowQuest());
+    }
+
+    IEnumerator DelayShowQuest()
+    {
+        yield return 0;
         if (CustomModel.Instance.crtQuestIndex > CustomModel.Instance.questList.Count)
         {
             prefabQuestNew.isOn = true;
@@ -157,7 +172,6 @@ public class CustomView : ViewBase
             }
             quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
         }
-
     }
 
     private void OnSelectNewHander(bool select)
@@ -172,10 +186,10 @@ public class CustomView : ViewBase
         }
     }
 
-    private void OnSelectQuest()
+    private void OnSelectQuest(HexQuest quest)
     {
         CustomModel.Instance.AttemptSave();
-        CustomModel.Instance.UpdateCrtQuest();
+        CustomModel.Instance.UpdateQuestIndex(quest);
 
         tip.text = "";
         UpdateCustomList();

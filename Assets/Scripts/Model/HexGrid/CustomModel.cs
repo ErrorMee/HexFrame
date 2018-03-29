@@ -21,6 +21,10 @@ public class CustomModel : Singleton<CustomModel>
 
     public void Init()
     {
+        if (questList != null)
+        {
+            return;
+        }
         questList = new List<HexQuest>();
         
         FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, LoadQuestFormFile);
@@ -40,7 +44,25 @@ public class CustomModel : Singleton<CustomModel>
         }
     }
 
-    public void UpdateCrtQuest()
+    public void UpdateQuestIndex(HexQuest quest)
+    {
+        CustomModel.Instance.crtQuestIndex = CustomModel.Instance.GetQuestIndex(quest);
+        UpdateCrtQuest();
+    }
+
+    private int GetQuestIndex(HexQuest quest)
+    {
+        for (int i = 0;i< questList.Count;i++)
+        {
+            if (questList[i] == quest)
+            {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    private void UpdateCrtQuest()
     {
         crtQuest = questList[crtQuestIndex - 1];
     }
