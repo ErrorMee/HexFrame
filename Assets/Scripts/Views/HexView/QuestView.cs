@@ -11,11 +11,12 @@ public class QuestView : ViewBase
     private void Awake()
     {
         EventTriggerListener.Get(homeButton.gameObject).onClick = OnClickHomeBtn;
+        GroundView.SetGridPos(homeButton, 8, 11);
     }
 
     private void OnClickHomeBtn(GameObject go)
     {
-        UIManager.Instance.OpenUI("HomeView");
+        UIManager.Instance.OpenUI("MainView");
     }
 
 }

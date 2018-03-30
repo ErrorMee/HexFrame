@@ -14,6 +14,7 @@ public class MainView : ViewBase
 
     private void Awake()
     {
+        
         EventTriggerListener.Get(customBtn.gameObject).onClick = OnClickCustomBtn;
 
         MainQuestModel.Instance.Init();
@@ -23,6 +24,11 @@ public class MainView : ViewBase
         CustomModel.Instance.Init();
 
         InitCustomQuest();
+    }
+
+    private void Start()
+    {
+        GroundView.SetGridPos(customBtn, 8, 1);
     }
 
     private void OnClickCustomBtn(GameObject go)
@@ -82,7 +88,7 @@ public class MainView : ViewBase
 
         EventTriggerListener.Get(nodeQuest.gameObject).onClick =
             (go) => {
-                UIManager.Instance.OpenUI("QusetView");
+                UIManager.Instance.OpenUI("QuestView");
             };
     }
 }

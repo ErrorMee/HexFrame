@@ -26,6 +26,7 @@ public class CustomView : ViewBase
 
     private void Awake()
     {
+        GroundView.SetGridPos(homeBtn, 8, 11);
         EventTriggerListener.Get(homeBtn.gameObject).onClick = OnClickHomeBtn;
 
         prefabQuestNew.onValueChanged.AddListener(OnSelectNewHander);

@@ -13,14 +13,27 @@ public class GroundView : ViewBase
 
     private bool firstCreateNode = true;
 
-    private void Start()
+    private static HexGrid grid;
+
+    private void Awake()
     {
-        HexGrid grid = HexGridModel.Instance.CreateEmptyGrid(11, 13);
+        grid = HexGridModel.Instance.CreateEmptyGrid(11, 13);
         grid.TraversalNodes(CreateNode);
+    }
+
+    public static void SetGridPos(Transform tf,int posx,int posy)
+    {
+        HexNode node = grid.nodes[posy][posx];
+        tf.localPosition = node.GetViewCoord();
     }
 
     private void CreateNode(HexNode node)
     {
+        if (node.ArrayCoord.x <= 0 || node.ArrayCoord.x >= 10)
+        {
+            return;
+        }
+
         Image cell;
         if (firstCreateNode)
         {
