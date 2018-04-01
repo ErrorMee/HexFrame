@@ -11,7 +11,7 @@ public class CustomHexNodeUI : HexNodeUI
     protected override void Awake()
     {
         base.Awake();
-        DOTween.To(() => icon.color, x => icon.color = x, new Color(32 / 255f, 32 / 255f, 32 / 255f, 1), 0.2f);
+		DOTween.To(() => icon.color, x => icon.color = x, new Color(64 / 255f, 64 / 255f, 64 / 255f, 1), 0.2f);
     }
 
     protected override void ClickNode(GameObject go)
@@ -27,12 +27,12 @@ public class CustomHexNodeUI : HexNodeUI
 
         if (data.marker.nodeType != HexNodeType.NONE)
         {
-            DOTween.To(() => icon.color, x => icon.color = x, new Color(248 / 255f, 248 / 255f, 248 / 255f, 1), 0.2f);
+            DOTween.To(() => icon.color, x => icon.color = x, new Color(240 / 255f, 240 / 255f, 240 / 255f, 1), 0.2f);
             ShowTip(data.marker.nodeType.ToString());
         }
         else
         {
-            DOTween.To(() => icon.color, x => icon.color = x, new Color(32 / 255f, 32 / 255f, 32 / 255f, 1), 0.2f);
+			DOTween.To(() => icon.color, x => icon.color = x, new Color(64 / 255f, 64 / 255f, 64 / 255f, 1), 0.2f);
             ShowTip(string.Empty);
         }
     }

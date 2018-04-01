@@ -19,6 +19,7 @@ public class CustomView : ViewBase
     public Transform newButton;
     public Transform nodeList;
     public Transform markerList;
+	public Transform questList;
 
     public Text tip;
 
@@ -26,7 +27,7 @@ public class CustomView : ViewBase
 
     private void Awake()
     {
-        GroundView.SetGridPos(homeBtn, 8, 11);
+        GroundView.SetGridPos(homeBtn, 8, 12);
         EventTriggerListener.Get(homeBtn.gameObject).onClick = OnClickHomeBtn;
 
         prefabQuestNew.onValueChanged.AddListener(OnSelectNewHander);
@@ -184,6 +185,7 @@ public class CustomView : ViewBase
             newButton.gameObject.SetActive(true);
             nodeList.gameObject.SetActive(false);
             markerList.gameObject.SetActive(false);
+			questList.gameObject.SetActive(false);
         }
     }
 
@@ -197,6 +199,7 @@ public class CustomView : ViewBase
         newButton.gameObject.SetActive(false);
         nodeList.gameObject.SetActive(true);
         markerList.gameObject.SetActive(true);
+		questList.gameObject.SetActive(true);
     }
 
     private void OnNewButtonClick(GameObject go)

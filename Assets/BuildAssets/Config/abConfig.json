@@ -11,18 +11,6 @@
         },
         {
             "id": 2,
-            "ab": "prefabs/ui/demo_",
-            "names": [
-                "BagUI",
-                "FightUI",
-                "LoginUI",
-                "MainUI"
-            ],
-            "type": "Asset",
-            "allUnload": false
-        },
-        {
-            "id": 3,
             "ab": "prefabs/ui/hexui_",
             "names": [
                 "CustomHexNodeUI",
@@ -35,10 +23,22 @@
             "allUnload": false
         },
         {
-            "id": 4,
+            "id": 3,
             "ab": "prefabs/ui/top_",
             "names": [
                 "TipsView"
+            ],
+            "type": "Asset",
+            "allUnload": false
+        },
+        {
+            "id": 4,
+            "ab": "prefabs/ui/demo_",
+            "names": [
+                "BagUI",
+                "FightUI",
+                "LoginUI",
+                "MainUI"
             ],
             "type": "Asset",
             "allUnload": false
@@ -50,6 +50,7 @@
                 "128add",
                 "128close",
                 "128stop",
+                "Marker00",
                 "cell_01",
                 "cell_02",
                 "cell_03",

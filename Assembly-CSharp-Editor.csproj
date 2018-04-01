@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{854F63C9-EEF0-6A26-9572-06B0C32BC1CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleBrowserMain.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleBuildTab.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleDataSource\ABDataSource.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleDataSource\ABDataSourceProvider.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleDataSource\AssetDatabaseABDataSource.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleManageTab.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleModel\ABModel.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleModel\ABModelAssetInfo.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleModel\ABModelBundleInfo.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetBundleTree.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\AssetListTree.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\BundleDetailList.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\InspectTab\AssetBundleInspectTab.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\InspectTab\AssetBundleRecord.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\InspectTab\InspectSingleBundle.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\InspectTab\InspectTreeView.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\MessageList.cs" />
+     <Compile Include="Assets\Editor\AssetBundleBrowser\MessageSystem.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\CreateAssetEditor.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\GemaEditor.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\GemaEditorConst.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\InspectorEdit\LuaComponentEditor.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\BuildResources.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\CollectDependencies.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\CopyLuaToStreamingAssets.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\GeneratePatchFiles.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\PathEdit.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\SetAllTexture.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\Resource\SetAssetBundle.cs" />
+     <Compile Include="Assets\Editor\GemaEditor\StreamingAssetsFileEdit.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Generator.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Hotfix.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\TemplateRef.cs" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_oks_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_progressbar.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaClassWrapGCM.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_oks_color_drawables.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaWrapPusher.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaDelegateBridge.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values-en\ssdk_strings.xml" />
+     <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\xlua\util.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_selector.xml" />
+     <None Include="Assets\ThirdParty\DOTween\readme.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_instapaper_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\link.xml" />
+     <None Include="Assets\Resources\LuaSetting.lua.txt" />
+     <None Include="Assets\StreamingAssets\patchs\patchfiles.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaEnumWrap.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\perf\profiler.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_strings.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaDelegateWrap.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\perf\memory.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_default.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaRegisterGCM.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaRegister.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaInterfaceBridge.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaClassWrap.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_press.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\CHANGELOG.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values-en\ssdk_oks_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\tdr\tdr.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values\values.xml" />
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>/Applications/Unity/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.OSXStandalone.Extensions">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/errormee/dev/HexFrame/Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenEditor">
+ <HintPath>/Users/errormee/dev/HexFrame/Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{EF45BA93-9C4A-763C-FEC1-7F7B9B87C991}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{9C623D0A-02BF-B0E7-CC69-33B9FFAF2BCD}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{EF289BBE-A5D3-DDE9-2DC7-E2428E5A2BCC}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

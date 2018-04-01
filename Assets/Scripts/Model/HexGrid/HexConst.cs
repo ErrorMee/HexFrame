@@ -113,7 +113,8 @@ public static class HexConst
 
     //内圆半径
     public const float innerRadius = outerRadius * innerOuterRadiusRatio;
-
+	//187
     public const float width = outerRadius * 2;
+	//162
     public const float height = innerRadius * 2;
 }

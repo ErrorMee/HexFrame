@@ -91,6 +91,10 @@ public class SetAssetBundle
             string filePath = files[i];
             string assetPath = filePath.Substring(Application.dataPath.Length - "assets".Length);
             AssetImporter ai = AssetImporter.GetAtPath(assetPath);
+			if(ai == null)
+			{
+				continue;
+			}
             GemaEditor.ShowProgress(i, files.Count, "SetAssetLabels", ai.assetPath);
 
             string abName = AanalyzeAssetLabels(assetPath);

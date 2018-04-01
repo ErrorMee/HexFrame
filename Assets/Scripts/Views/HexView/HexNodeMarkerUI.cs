@@ -34,7 +34,14 @@ public class HexNodeMarkerUI : MonoBehaviour {
     public void InitData(HexNodeMarker _data)
     {
         data = _data;
-        ShowTip(data.nodeType.ToString());
+		switch(data.nodeType)
+		{
+			case HexNodeType.NONE:
+			break;
+			default:
+			ShowTip(data.nodeType.ToString());
+			break;
+		}
     }
 
     public void ShowTip(string tips)

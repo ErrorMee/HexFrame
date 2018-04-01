@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{9C623D0A-02BF-B0E7-CC69-33B9FFAF2BCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\Config\ABConfig.cs" />
+     <Compile Include="Assets\Scripts\Config\BaseConfigInfo.cs" />
+     <Compile Include="Assets\Scripts\Debug\Profiler\FPS.cs" />
+     <Compile Include="Assets\Scripts\Game.cs" />
+     <Compile Include="Assets\Scripts\GameSetting.cs" />
+     <Compile Include="Assets\Scripts\Managers\EventManager\EventTriggerListener.cs" />
+     <Compile Include="Assets\Scripts\Managers\EventManager\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\Managers\EventManager\GameEventType.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\LuaComponent.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\LuaManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\01_Helloworld\Helloworld.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\02_U3DScripting\LuaBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\04_LuaObjectOrented\InvokeLua.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\05_NoGc\NoGc.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\Coroutine_Runner.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\CoroutineTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\AsyncTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\MessageBox.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\08_Hotfix\HotfixTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\08_Hotfix\HotfixTest2.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\08_Hotfix\StatefullTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\09_GenericMethod\Foo.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\09_GenericMethod\GenericMethodExample.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\10_SignatureLoader\SignatureLoaderTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\11_RawObject\RawObjectTest.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\12_ReImplementInLua\ReImplementInLua.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\ExampleGenConfig.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\Coroutine_RunnerWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\CSCallLuaItfDBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\DelegatesGensBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\EnumWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\Foo1ChildWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\Foo1ParentWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\Foo2ChildWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\Foo2ParentWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\FooExtensionWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\FooWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\InvokeLuaICalcBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\LuaBehaviourWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\PackUnpack.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\SystemCollectionsGenericList1SystemInt32Wrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\SystemCollectionsIEnumeratorBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\SystemObjectWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\TutorialBaseClassWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\TutorialCalcWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\TutorialDrivenClassExtensionsWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\TutorialDrivenClassWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineAnimationClipWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineAnimationCurveWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineBehaviourWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineBoundsWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineColorWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineComponentWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineDebugWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineGameObjectWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineKeyframeWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineMonoBehaviourWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineObjectWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineParticleSystemWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineQuaternionWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineRay2DWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineRayWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineRendererWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineResourcesWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineSkinnedMeshRendererWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineTextAssetWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineTimeWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineTransformWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineVector2Wrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineVector3Wrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineVector4Wrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineWaitForSecondsWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\UnityEngineWWWWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\WrapPusher.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\XLuaGenAutoRegister.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\XLuaTestIExchangerBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\XLuaTestMyStructWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\XLuaTestNoGcWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\XLuaTestPeddingWrap.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\CodeEmit.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\CopyByValue.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\DelegateBridge.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\GenAttributes.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\InternalGlobals.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaBase.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaDLL.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaEnv.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaException.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaFunction.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\LuaTable.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\MethodWarpsCache.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\ObjectCasters.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\ObjectTranslator.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\ObjectTranslatorPool.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\RawObject.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\SignatureLoader.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\StaticLuaCallbacks.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\TemplateEngine\TemplateEngine.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\TypeExtensions.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Utils.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\CSharpCallLua\CSCallLua.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\ByFile.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByString\ByString.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\Loader\CustomLoader.cs" />
+     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LuaCallCSharp\LuaCallCs.cs" />
+     <Compile Include="Assets\Scripts\Managers\NetManger\Http\HttpManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\PatchManager\PatchFileInfo.cs" />
+     <Compile Include="Assets\Scripts\Managers\PatchManager\PatchFiles.cs" />
+     <Compile Include="Assets\Scripts\Managers\PatchManager\PatchManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ResourceManager\AssetBundleInfo.cs" />
+     <Compile Include="Assets\Scripts\Managers\ResourceManager\AssetManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ResourceManager\ResourceManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\SDKManager\SDKManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\UIManager\base\SimplePageList.cs" />
+     <Compile Include="Assets\Scripts\Managers\UIManager\base\SimpleScrollList.cs" />
+     <Compile Include="Assets\Scripts\Managers\UIManager\UIManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\UIManager\ViewBase.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\CustomModel.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexConst.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexGrid.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexGridModel.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexNode.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexNodeMarker.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\HexQuest.cs" />
+     <Compile Include="Assets\Scripts\Model\HexGrid\MainQuestModel.cs" />
+     <Compile Include="Assets\Scripts\Util\ColorUtil.cs" />
+     <Compile Include="Assets\Scripts\Util\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\Scripts\Util\EncryptUtil.cs" />
+     <Compile Include="Assets\Scripts\Util\FindAllFiles.cs" />
+     <Compile Include="Assets\Scripts\Util\GLog.cs" />
+     <Compile Include="Assets\Scripts\Util\MD5Util.cs" />
+     <Compile Include="Assets\Scripts\Util\MyExtensions.cs" />
+     <Compile Include="Assets\Scripts\Util\NetworkUtil.cs" />
+     <Compile Include="Assets\Scripts\Util\ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Util\PathUtil.cs" />
+     <Compile Include="Assets\Scripts\Util\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Util\SliderUtil.cs" />
+     <Compile Include="Assets\Scripts\Util\StringUtil.cs" />
+     <Compile Include="Assets\Scripts\Views\BagUI.cs" />
+     <Compile Include="Assets\Scripts\Views\FightUI.cs" />
+     <Compile Include="Assets\Scripts\Views\GroundView.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\CustomHexNodeUI.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\CustomView.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\HexNodeMarkerUI.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\HexNodeUI.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\MainView.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\QuestNodeUI.cs" />
+     <Compile Include="Assets\Scripts\Views\HexView\QuestView.cs" />
+     <Compile Include="Assets\Scripts\Views\MainUI.cs" />
+     <Compile Include="Assets\Scripts\Views\TipsView\TipBar.cs" />
+     <Compile Include="Assets\Scripts\Views\TipsView\TipsView.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BclHelpers.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BufferExtension.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\BufferPool.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\CallbackAttributes.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\CompilerContext.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\CompilerDelegates.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Compiler\Local.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\DataFormat.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Extensible.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ExtensibleUtil.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\GlobalSuppressions.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Helpers.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IExtensible.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\IExtension.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ImplicitFields.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\KeyValuePairProxy.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\AttributeMap.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\BasicList.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\CallbackSet.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\MetaType.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\RuntimeTypeModel.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\SubType.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeFormatEventArgs.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\TypeModel.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Meta\ValueMember.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\NetObjectCache.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\PrefixStyle.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoContractAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoConverterAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoEnumAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoException.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIgnoreAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoIncludeAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoMemberAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoReader.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ProtoWriter.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\SerializationContext.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ArrayDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\BlobSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\BooleanSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ByteSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CharSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\CompiledSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DateTimeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DecimalSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DefaultValueDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\DoubleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\EnumSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\FieldDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\GuidSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ImmutableCollectionDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int16Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int32Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\Int64Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\IProtoTypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ISerializerProxy.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\KeyValuePairDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ListDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\MemberSpecifiedDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NetObjectSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\NullDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ParseableSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\PropertyDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\ProtoDecoratorBase.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SByteSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SingleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\StringSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SubItemSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SurrogateSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\SystemTypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TagDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TimeSpanSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TupleSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\TypeSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt16Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt32Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UInt64Serializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\Serializers\UriDecorator.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoBehaviorAttribute.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoBehaviorExtensionElement.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoEndpointBehavior.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\ProtoOperationBehavior.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\ServiceModel\XmlProtoSerializer.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\SubItemToken.cs" />
+     <Compile Include="Assets\ThirdParty\protobuf-net\WireType.cs" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_oks_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\Resources\message_box.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\Resources\cs_coroutine.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\02_U3DScripting\LuaTestScript.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_progressbar.xml" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\07_AsyncTest\Resources\async_test.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Tutorial\LoadLuaScript\ByFile\Resources\byfile.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaClassWrapGCM.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_oks_color_drawables.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\06_Coroutine\Resources\coruntine_test.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaWrapPusher.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaDelegateBridge.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values-en\ssdk_strings.xml" />
+     <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\xlua\util.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_selector.xml" />
+     <None Include="Assets\ThirdParty\DOTween\readme.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_instapaper_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Examples\03_UIEvent\ButtonInteraction.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Gen\link.xml" />
+     <None Include="Assets\Resources\LuaSetting.lua.txt" />
+     <None Include="Assets\StreamingAssets\patchs\patchfiles.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\TemplateCommon.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaEnumWrap.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\perf\profiler.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\values\ssdk_strings.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaDelegateWrap.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\perf\memory.lua.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_default.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaRegisterGCM.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaRegister.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaInterfaceBridge.tpl.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaClassWrap.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\drawable\ssdk_weibo_retry_btn_press.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\CHANGELOG.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\LuaEnumWrapGCM.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values-en\ssdk_oks_strings.xml" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Resources\tdr\tdr.lua.txt" />
+     <None Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Template\PackUnpack.tpl.txt" />
+     <None Include="Assets\Plugins\Android\res\values\values.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>/Users/errormee/dev/HexFrame/Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{EF45BA93-9C4A-763C-FEC1-7F7B9B87C991}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
