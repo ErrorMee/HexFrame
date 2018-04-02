@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.UI;
-using System;
 
 public class MainView : ViewBase
 {
@@ -14,7 +11,6 @@ public class MainView : ViewBase
 
     private void Awake()
     {
-        
         EventTriggerListener.Get(customBtn.gameObject).onClick = OnClickCustomBtn;
 
         MainQuestModel.Instance.Init();
@@ -31,9 +27,37 @@ public class MainView : ViewBase
         GroundView.SetGridPos(customBtn, 8, 1);
     }
 
+    private void InitMainQuest()
+    {
+        for (int i = 0; i < MainQuestModel.Instance.questList.Count; i++)
+        {
+            HexQuest quest = MainQuestModel.Instance.questList[i];
+            CreateMainNode(quest);
+        }
+    }
+
+    private void CreateMainNode(HexQuest quest)
+    {
+        QuestNodeUI nodeQuest = mainPrefab;
+
+        if (quest.id != 1)
+        {
+            nodeQuest = Instantiate<QuestNodeUI>(mainPrefab);
+            nodeQuest.transform.SetParent(mainPrefab.transform.parent, false);
+        }
+
+        nodeQuest.InitData(quest);
+
+        EventTriggerListener.Get(nodeQuest.gameObject).onClick =
+            (go) => {
+                MainQuestModel.Instance.crtQuest = quest;
+                UIManager.Instance.OpenUI("QuestView");
+            };
+    }
+
     private void OnClickCustomBtn(GameObject go)
     {
-        CustomModel.Instance.crtQuestIndex = CustomModel.Instance.questList.Count + 1;
+        CustomModel.Instance.crtQuest = null;
         UIManager.Instance.OpenUI("CustomView");
     }
 
@@ -60,35 +84,8 @@ public class MainView : ViewBase
 
         EventTriggerListener.Get(nodeQuest.gameObject).onClick = 
             (go) => {
-                CustomModel.Instance.UpdateQuestIndex(quest);
+                CustomModel.Instance.crtQuest = quest;
                 UIManager.Instance.OpenUI("CustomView");
-            };
-    }
-
-    private void InitMainQuest()
-    {
-        for (int i = 0; i < MainQuestModel.Instance.questList.Count; i++)
-        {
-            HexQuest quest = MainQuestModel.Instance.questList[i];
-            CreateMianNode(quest);
-        }
-    }
-
-    private void CreateMianNode(HexQuest quest)
-    {
-        QuestNodeUI nodeQuest = mainPrefab;
-
-        if (quest.id != 1)
-        {
-            nodeQuest = Instantiate<QuestNodeUI>(mainPrefab);
-            nodeQuest.transform.SetParent(mainPrefab.transform.parent, false);
-        }
-
-        nodeQuest.InitData(quest);
-
-        EventTriggerListener.Get(nodeQuest.gameObject).onClick =
-            (go) => {
-                UIManager.Instance.OpenUI("QuestView");
             };
     }
 }

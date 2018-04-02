@@ -147,8 +147,35 @@ public class CustomView : ViewBase
 
     private void ListHorizontalSliderHander(int dir)
     {
-        
-        CustomModel.Instance.crtQuestIndex = CustomModel.Instance.crtQuestIndex + dir;
+        if (CustomModel.Instance.crtQuest == null)
+        {
+            if (dir < 0)
+            {
+                if (CustomModel.Instance.questList.Count > 0)
+                {
+                    CustomModel.Instance.crtQuest = CustomModel.Instance.questList[CustomModel.Instance.questList.Count - 1];
+                }
+            }
+        } else
+        {
+            int crtIndex = CustomModel.Instance.questList.IndexOf(CustomModel.Instance.crtQuest);
+            int toIndex = crtIndex + dir;
+            if (toIndex >= 0)
+            {
+                if (toIndex >= CustomModel.Instance.questList.Count)
+                {
+                    CustomModel.Instance.crtQuest = null;
+                }
+                else
+                {
+                    CustomModel.Instance.crtQuest = CustomModel.Instance.questList[toIndex];
+                }
+            }
+            else
+            {
+                CustomModel.Instance.crtQuest = null;
+            }
+        }
 
         ShowQuest();
     }
@@ -162,17 +189,13 @@ public class CustomView : ViewBase
     IEnumerator DelayShowQuest()
     {
         yield return 0;
-        if (CustomModel.Instance.crtQuestIndex > CustomModel.Instance.questList.Count)
+        if (CustomModel.Instance.crtQuest == null)
         {
             prefabQuestNew.isOn = true;
         }
         else
         {
-            if (CustomModel.Instance.crtQuestIndex < 1)
-            {
-                CustomModel.Instance.crtQuestIndex = 1;
-            }
-            quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
+            quests[CustomModel.Instance.questList.IndexOf(CustomModel.Instance.crtQuest)].toggle.isOn = true;
         }
     }
 
@@ -181,7 +204,7 @@ public class CustomView : ViewBase
         if (select)
         {
             CustomModel.Instance.AttemptSave();
-            CustomModel.Instance.crtQuestIndex = CustomModel.Instance.questList.Count + 1;
+            CustomModel.Instance.crtQuest = null;
             newButton.gameObject.SetActive(true);
             nodeList.gameObject.SetActive(false);
             markerList.gameObject.SetActive(false);
@@ -192,7 +215,7 @@ public class CustomView : ViewBase
     private void OnSelectQuest(HexQuest quest)
     {
         CustomModel.Instance.AttemptSave();
-        CustomModel.Instance.UpdateQuestIndex(quest);
+        CustomModel.Instance.crtQuest = quest;
 
         tip.text = "";
         UpdateCustomList();
@@ -206,7 +229,7 @@ public class CustomView : ViewBase
     {
         CustomModel.Instance.CreateQuest();
         CreateQuestNode(CustomModel.Instance.crtQuest);
-        quests[CustomModel.Instance.crtQuestIndex - 1].toggle.isOn = true;
+        quests[CustomModel.Instance.questList.Count - 1].toggle.isOn = true;
     }
 
     private void OnDrawGizmos()

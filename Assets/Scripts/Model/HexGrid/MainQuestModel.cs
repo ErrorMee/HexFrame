@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class MainQuestModel : Singleton<MainQuestModel>
 {
     public List<HexQuest> questList;
+    public HexQuest crtQuest;
 
     public void Init()
     {

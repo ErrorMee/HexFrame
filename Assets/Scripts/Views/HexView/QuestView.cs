@@ -29,7 +29,7 @@ public class QuestView : ViewBase
 
 	private void CreateList()
 	{
-		CustomModel.Instance.crtQuest.grid.TraversalNodes(CreateNode);
+        MainQuestModel.Instance.crtQuest.grid.TraversalNodes(CreateNode);
 	}
 
 	private void CreateNode(HexNode node)

@@ -12,7 +12,6 @@ public class CustomModel : Singleton<CustomModel>
     public List<HexQuest> questList;
 
     public HexQuest crtQuest;
-    public int crtQuestIndex;
 
     public HexNodeMarker selectMarker;
     public HexNode selectNode;
@@ -25,31 +24,19 @@ public class CustomModel : Singleton<CustomModel>
         {
             return;
         }
+
         questList = new List<HexQuest>();
         
-        FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, LoadQuestFormFile);
-
-        if (questList.Count < 1)
+        FindAllFiles.ListFiles(PathUtil.GetQuestDir(HexQuestType.CUSTOM), false, (fileName) =>
         {
-            CreateQuest();
-            AttemptSave();
-        }
-        else
-        {
-            if (crtQuestIndex <= 0 || crtQuestIndex > questList.Count)
-            {
-                crtQuestIndex = questList.Count;
-            }
-            crtQuest = questList[crtQuestIndex - 1];
-        }
+            HexQuest quest = new HexQuest();
+            quest.type = HexQuestType.CUSTOM;
+            quest.Load(fileName);
+            questList.Add(quest);
+            CustomModel.MAX_QUEST_ID = Mathf.Max(CustomModel.MAX_QUEST_ID, quest.id);
+        });
     }
-
-    public void UpdateQuestIndex(HexQuest quest)
-    {
-        CustomModel.Instance.crtQuestIndex = CustomModel.Instance.GetQuestIndex(quest);
-        UpdateCrtQuest();
-    }
-
+    
     private int GetQuestIndex(HexQuest quest)
     {
         for (int i = 0;i< questList.Count;i++)
@@ -61,12 +48,7 @@ public class CustomModel : Singleton<CustomModel>
         }
         return -1;
     }
-
-    private void UpdateCrtQuest()
-    {
-        crtQuest = questList[crtQuestIndex - 1];
-    }
-
+    
     public HexQuest CreateQuest()
     {
         HexQuest quest = new HexQuest();
@@ -74,20 +56,8 @@ public class CustomModel : Singleton<CustomModel>
         quest.type = HexQuestType.CUSTOM;
         quest.needSave = true;
         questList.Add(quest);
-        crtQuestIndex = questList.Count;
         quest.grid = HexGridModel.Instance.CreateEmptyGrid(HexGridModel.WIDTH, HexGridModel.HEIGHT);
-        crtQuest = quest;
         return quest;
-    }
-
-    private void LoadQuestFormFile(string fileName)
-    {
-        HexQuest quest = new HexQuest();
-        quest.type = HexQuestType.CUSTOM;
-        quest.Load(fileName);
-        questList.Add(quest);
-        crtQuestIndex = questList.Count;
-        CustomModel.MAX_QUEST_ID = Mathf.Max(CustomModel.MAX_QUEST_ID, quest.id);
     }
 
     public void SelectMarker(HexNodeMarker marker)
