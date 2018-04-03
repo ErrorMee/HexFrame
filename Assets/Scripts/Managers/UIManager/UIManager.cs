@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : SingletonBehaviour<UIManager>
 {
@@ -170,9 +171,11 @@ public class UIManager : SingletonBehaviour<UIManager>
         ResourceManager.Instance.DestroyGameObj(ui.gameObject);
     }
 
-    private void Update()
+    public void SetImage(Image image,string name)
     {
-        //lastTouchPos = Input.mousePosition;
-        //GLog.Log("lastTouchPos " + lastTouchPos.x + "," + lastTouchPos.y + "," + lastTouchPos.z);
+        ResourceManager.Instance.LoadAsync<Sprite>(name, (obj) =>
+        {
+            image.overrideSprite = obj;
+        });
     }
 }

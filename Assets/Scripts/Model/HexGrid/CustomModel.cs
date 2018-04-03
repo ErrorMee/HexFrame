@@ -103,7 +103,7 @@ public class CustomModel : Singleton<CustomModel>
 
     public void AttemptSave()
     {
-        if (crtQuest.needSave)
+        if (crtQuest!= null && crtQuest.needSave)
         {
             crtQuest.needSave = false;
             crtQuest.Save();

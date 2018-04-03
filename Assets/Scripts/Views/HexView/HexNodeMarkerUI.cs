@@ -8,6 +8,10 @@ public class HexNodeMarkerUI : MonoBehaviour {
     public Image icon;
     public Text tip;
 
+    private void Awake()
+    {
+        tip.text = "";
+    }
 
     private void OnEnable()
     {
@@ -37,10 +41,33 @@ public class HexNodeMarkerUI : MonoBehaviour {
 		switch(data.nodeType)
 		{
 			case HexNodeType.NONE:
-			break;
-			default:
-			ShowTip(data.nodeType.ToString());
-			break;
+                UIManager.Instance.SetImage(icon, "Marker00");
+			    break;
+            case HexNodeType.ORIGIN:
+                UIManager.Instance.SetImage(icon, "Marker01");
+                icon.color = Color.green;
+                break;
+            case HexNodeType.END:
+                UIManager.Instance.SetImage(icon, "Marker01");
+                icon.color = Color.yellow;
+                break;
+            case HexNodeType.NORM:
+                UIManager.Instance.SetImage(icon, "Marker01");
+                break;
+            case HexNodeType.ORDER:
+                UIManager.Instance.SetImage(icon, "Marker01");
+                ShowTip(((int)data.order).ToString());
+                break;
+            case HexNodeType.FREQUENCY:
+                UIManager.Instance.SetImage(icon, "Marker02");
+                break;
+            //case HexNodeType.BRIDGE:
+            //    UIManager.Instance.SetImage(icon, "Marker01");
+            //    break;
+            default:
+                UIManager.Instance.SetImage(icon, "Marker01");
+                ShowTip(data.nodeType.ToString());
+			    break;
 		}
     }
 

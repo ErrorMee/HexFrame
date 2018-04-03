@@ -15,6 +15,8 @@ public class CustomView : ViewBase
     private List<CustomHexNodeUI> cells = new List<CustomHexNodeUI>();
 
     public HexNodeMarkerUI prefabMarker;
+    private List<Vector2> markerPoss = new List<Vector2> {new Vector2(2, 1), new Vector2(3, 1), new Vector2(4, 1),
+     new Vector2(5,1), new Vector2(6,1), new Vector2(7,1), new Vector2(8,1), new Vector2(3,0), new Vector2(5,0), new Vector2(7,0)};
 
     public Transform newButton;
     public Transform nodeList;
@@ -28,6 +30,7 @@ public class CustomView : ViewBase
     private void Awake()
     {
         GroundView.SetGridPos(homeBtn, 8, 12);
+        GroundView.SetGridPos(newButton, 5, 6);
         EventTriggerListener.Get(homeBtn.gameObject).onClick = OnClickHomeBtn;
 
         prefabQuestNew.onValueChanged.AddListener(OnSelectNewHander);
@@ -89,11 +92,11 @@ public class CustomView : ViewBase
         for (int i = 0;i<HexNodeMarker.MARKERS.Count;i++)
         {
             HexNodeMarker marker = HexNodeMarker.MARKERS[i];
-            CreateNodeMarker(marker);
+            CreateNodeMarker(marker,i);
         }
     }
 
-    private void CreateNodeMarker(HexNodeMarker marker)
+    private void CreateNodeMarker(HexNodeMarker marker,int index)
     {
         HexNodeMarkerUI nodeMarker = prefabMarker;
         if (marker.nodeType > HexNodeType.NONE)
@@ -101,24 +104,24 @@ public class CustomView : ViewBase
             nodeMarker = Instantiate<HexNodeMarkerUI>(prefabMarker);
             nodeMarker.transform.SetParent(prefabMarker.transform.parent, false);
         }
-
+        Vector2 pos = markerPoss[index];
+        GroundView.SetGridPos(nodeMarker.transform, (int)pos.x, (int)pos.y);
         nodeMarker.InitData(marker);
     }
 
     private void CreateCustomList()
     {
-        CustomModel.Instance.crtQuest.grid.TraversalNodes(CreateNode);
+        for (int column = 0; column < HexGridModel.HEIGHT; column++)
+        {
+            for (int row = 0; row < HexGridModel.WIDTH; row++)
+            {
+                CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefabCustom);
+                cells.Add(cell);
+                cell.transform.SetParent(nodeList, false);
+            }
+        }
     }
-
-    private void CreateNode(HexNode node)
-    {
-        CustomHexNodeUI cell = Instantiate<CustomHexNodeUI>(prefabCustom);
-        cells.Add(cell);
-        cell.transform.SetParent(nodeList, false);
-        
-        cell.InitData(node);
-    }
-
+    
     private void UpdateCustomList()
     {
         int index = 0;
@@ -188,13 +191,17 @@ public class CustomView : ViewBase
 
     IEnumerator DelayShowQuest()
     {
-        yield return 0;
         if (CustomModel.Instance.crtQuest == null)
         {
+            nodeList.gameObject.SetActive(false);
+            markerList.gameObject.SetActive(false);
+            yield return 0;
             prefabQuestNew.isOn = true;
         }
         else
         {
+            prefabQuestNew.isOn = false;
+            yield return 0;
             quests[CustomModel.Instance.questList.IndexOf(CustomModel.Instance.crtQuest)].toggle.isOn = true;
         }
     }
@@ -208,7 +215,6 @@ public class CustomView : ViewBase
             newButton.gameObject.SetActive(true);
             nodeList.gameObject.SetActive(false);
             markerList.gameObject.SetActive(false);
-			questList.gameObject.SetActive(false);
         }
     }
 
@@ -227,7 +233,7 @@ public class CustomView : ViewBase
 
     private void OnNewButtonClick(GameObject go)
     {
-        CustomModel.Instance.CreateQuest();
+        CustomModel.Instance.crtQuest = CustomModel.Instance.CreateQuest();
         CreateQuestNode(CustomModel.Instance.crtQuest);
         quests[CustomModel.Instance.questList.Count - 1].toggle.isOn = true;
     }

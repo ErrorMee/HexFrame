@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 663724138
+CRC: 788581571
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 57abd2fe92bd12eb651ab8cf510777fe
+    Hash: 989b2a93a8db5531c21a6f72935df0c3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 21f0dc8ebad690f009368069428e0a1a
@@ -20,6 +20,7 @@ Assets:
 - Assets/BuildAssets/UISprite/logo_17.png
 - Assets/BuildAssets/UISprite/128add.png
 - Assets/BuildAssets/UISprite/cell_01.png
+- Assets/BuildAssets/UISprite/Marker00.png
 - Assets/BuildAssets/UISprite/cell_04.png
 - Assets/BuildAssets/UISprite/logo_01.png
 - Assets/BuildAssets/UISprite/tipbar.png

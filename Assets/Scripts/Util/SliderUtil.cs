@@ -31,7 +31,7 @@ public class SliderUtil : MonoBehaviour
                 startPos.y = (mouseScreen.y - Screen.height * 0.5f);
                 startPos.z = Time.realtimeSinceStartup;
 
-                if (Math.Abs(startPos.y) < (HexConst.height * 4))
+                if (Math.Abs(startPos.y) < (HexConst.height * Screen.width / 1080f * 4))
                 {
                     startHorizontalSild = true;
                 }
