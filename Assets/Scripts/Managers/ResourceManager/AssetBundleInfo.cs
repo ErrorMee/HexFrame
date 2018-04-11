@@ -34,16 +34,6 @@ public class AssetBundleInfo
     }
 
     /// <summary>
-    /// 加载Asset
-    /// </summary>
-    /// <param name="assetName"></param>
-    /// <returns></returns>
-    public AssetBundleRequest LoadAssetAsync(string assetName)
-    {
-        return ab.LoadAssetAsync(assetName);
-    }
-
-    /// <summary>
     /// 取用Asset
     /// </summary>
     /// <param name="assetName"></param>

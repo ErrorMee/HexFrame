@@ -53,7 +53,7 @@ public class AssetManager : SingletonBehaviour<AssetManager>
         get
         {
 #if UNITY_EDITOR
-            return Game.Instance.gameSetting.loadModeIsBundle;
+            return Game.Instance.gameSetting.editorLoadModeIsBundle;
 #else
             return true;
 #endif
@@ -103,13 +103,17 @@ public class AssetManager : SingletonBehaviour<AssetManager>
         AssetBundleInfo abInfo = null;
         if (assetBundleInfoDic.TryGetValue(abName, out abInfo))
         {
-            AssetBundleRequest abRequest = abInfo.LoadAssetAsync(assetName);
+            AssetBundleRequest abRequest = abInfo.ab.LoadAssetAsync<T>(assetName);
             while (!abRequest.isDone)
             {
                 yield return null;
             }
 
             T res = abRequest.asset as T;
+            if (res == null)
+            {
+                GLog.Warning("assetName :" + assetName + " not find");
+            }
             finishLoad(res);
             abInfo.TakeAsset(assetName);
         }

@@ -29,6 +29,7 @@ public class CustomView : ViewBase
 
     private void Awake()
     {
+        prefabQuest.gameObject.SetActive(false);
         GroundView.SetGridPos(homeBtn, 8, 12);
         GroundView.SetGridPos(newButton, 5, 6);
         EventTriggerListener.Get(homeBtn.gameObject).onClick = OnClickHomeBtn;
@@ -80,7 +81,7 @@ public class CustomView : ViewBase
             nodeQuest = Instantiate<QuestNodeUI>(prefabQuest);
             nodeQuest.transform.SetParent(prefabQuest.transform.parent, false);
         }
-
+        nodeQuest.gameObject.SetActive(true);
         nodeQuest.InitData(quest);
         nodeQuest.onSelect = OnSelectQuest;
         quests.Add(nodeQuest);

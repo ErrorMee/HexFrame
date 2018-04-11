@@ -11,6 +11,9 @@ public class MainView : ViewBase
 
     private void Awake()
     {
+        customPrefab.gameObject.SetActive(false);
+        mainPrefab.gameObject.SetActive(false);
+
         EventTriggerListener.Get(customBtn.gameObject).onClick = OnClickCustomBtn;
 
         MainQuestModel.Instance.Init();
@@ -45,7 +48,7 @@ public class MainView : ViewBase
             nodeQuest = Instantiate<QuestNodeUI>(mainPrefab);
             nodeQuest.transform.SetParent(mainPrefab.transform.parent, false);
         }
-
+        nodeQuest.gameObject.SetActive(true);
         nodeQuest.InitData(quest);
 
         EventTriggerListener.Get(nodeQuest.gameObject).onClick =
@@ -79,7 +82,7 @@ public class MainView : ViewBase
             nodeQuest = Instantiate<QuestNodeUI>(customPrefab);
             nodeQuest.transform.SetParent(customPrefab.transform.parent, false);
         }
-
+        nodeQuest.gameObject.SetActive(true);
         nodeQuest.InitData(quest);
 
         EventTriggerListener.Get(nodeQuest.gameObject).onClick = 

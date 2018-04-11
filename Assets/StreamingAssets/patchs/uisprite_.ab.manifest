@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 788581571
+CRC: 708112905
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 989b2a93a8db5531c21a6f72935df0c3
+    Hash: 24899c4fd20f9cf6669123f69d80fe32
   TypeTreeHash:
     serializedVersion: 2
     Hash: 21f0dc8ebad690f009368069428e0a1a
@@ -14,7 +14,11 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
+- Assets/BuildAssets/UISprite/Marker01.png
+- Assets/BuildAssets/UISprite/Marker04.png
 - Assets/BuildAssets/UISprite/cell_02.png
+- Assets/BuildAssets/UISprite/Marker03.png
+- Assets/BuildAssets/UISprite/Marker02.png
 - Assets/BuildAssets/UISprite/cell_03.png
 - Assets/BuildAssets/UISprite/128stop.png
 - Assets/BuildAssets/UISprite/logo_17.png
@@ -24,6 +28,7 @@ Assets:
 - Assets/BuildAssets/UISprite/cell_04.png
 - Assets/BuildAssets/UISprite/logo_01.png
 - Assets/BuildAssets/UISprite/tipbar.png
+- Assets/BuildAssets/UISprite/Marker05.png
 - Assets/BuildAssets/UISprite/logo_16.png
 - Assets/BuildAssets/UISprite/frame_02.png
 - Assets/BuildAssets/UISprite/128close.png

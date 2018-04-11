@@ -38,34 +38,31 @@ public class HexNodeMarkerUI : MonoBehaviour {
     public void InitData(HexNodeMarker _data)
     {
         data = _data;
-		switch(data.nodeType)
+        UIManager.Instance.SetImage(icon, data.icon);
+        switch (data.nodeType)
 		{
 			case HexNodeType.NONE:
-                UIManager.Instance.SetImage(icon, "Marker00");
 			    break;
             case HexNodeType.ORIGIN:
-                UIManager.Instance.SetImage(icon, "Marker01");
                 icon.color = Color.green;
                 break;
             case HexNodeType.END:
-                UIManager.Instance.SetImage(icon, "Marker01");
                 icon.color = Color.yellow;
                 break;
             case HexNodeType.NORM:
-                UIManager.Instance.SetImage(icon, "Marker01");
+                icon.color = Color.gray;
                 break;
             case HexNodeType.ORDER:
-                UIManager.Instance.SetImage(icon, "Marker01");
                 ShowTip(((int)data.order).ToString());
+                icon.color = Color.gray;
                 break;
             case HexNodeType.FREQUENCY:
-                UIManager.Instance.SetImage(icon, "Marker02");
+                icon.color = Color.gray;
                 break;
-            //case HexNodeType.BRIDGE:
-            //    UIManager.Instance.SetImage(icon, "Marker01");
-            //    break;
+            case HexNodeType.BRIDGE:
+                icon.color = Color.gray;
+                break;
             default:
-                UIManager.Instance.SetImage(icon, "Marker01");
                 ShowTip(data.nodeType.ToString());
 			    break;
 		}

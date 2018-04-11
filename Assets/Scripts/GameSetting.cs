@@ -47,11 +47,11 @@ public class GameSetting : ScriptableObject
     [Header("---------- Load ----------")]
 
     /// <summary>
-    /// 加载资源是否使用生成的bundle 
+    /// 编辑器环境加载资源是否使用生成的bundle 
     /// false时直接加载原始资源
     /// </summary>
-    [Tooltip("加载资源是否使用bundle文件")]
-    public bool loadModeIsBundle = true;
+    [Tooltip("编辑器环境加载资源是否使用bundle文件")]
+    public bool editorLoadModeIsBundle = true;
 
     [Space(10)]
     [Header("---------- Other ----------")]

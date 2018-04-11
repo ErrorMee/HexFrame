@@ -22,6 +22,8 @@ public class HexNodeMarker
     /// </summary>
     public int id;
 
+    public string icon = "Marker01";
+
     /// <summary>
     /// 节点类型
     /// </summary>
@@ -63,7 +65,7 @@ public class HexNodeMarker
 
         //HexNodeType.NONE
         node = CreateMarker(HexNodeType.NONE);
-
+        node.icon = "Marker00";
         //HexNodeType.ORIGIN
         node = CreateMarker(HexNodeType.ORIGIN);
 
@@ -83,21 +85,23 @@ public class HexNodeMarker
         //HexNodeType.FREQUENCY
         node = CreateMarker(HexNodeType.FREQUENCY);
         node.frequency = HexNodeFrequency.DOUBLE;
-
+        node.icon = "Marker02";
         //HexNodeType.BRIDGE 
         //南>北 单通桥
         node = CreateMarker(HexNodeType.BRIDGE);
         node.entrances = new List<HexNodeDir> { HexNodeDir.SOUTH };
         node.exits = new List<HexNodeDir> { HexNodeDir.NORTH };
+        node.icon = "Marker03";
         //南<>北 互通桥
         node = CreateMarker(HexNodeType.BRIDGE);
         node.entrances = new List<HexNodeDir> { HexNodeDir.SOUTH, HexNodeDir.NORTH };
         node.exits = new List<HexNodeDir> { HexNodeDir.SOUTH, HexNodeDir.NORTH };
+        node.icon = "Marker04";
         //动态 单通桥
         node = CreateMarker(HexNodeType.BRIDGE);
         node.entrances = new List<HexNodeDir> { HexNodeDir.ALL };
         node.exits = new List<HexNodeDir> { HexNodeDir.OPPOSITE, HexNodeDir.NONE };
-
+        node.icon = "Marker05";
     }
 
     private static HexNodeMarker CreateMarker(HexNodeType nodeType)
