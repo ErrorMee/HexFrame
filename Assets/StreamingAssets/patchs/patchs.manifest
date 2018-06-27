@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3049108894
+CRC: 135577899
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -24,3 +24,6 @@ AssetBundleManifest:
       Name: prefabs/ui/top_.ab
       Dependencies:
         Dependency_0: uisprite_.ab
+    Info_6:
+      Name: bgtest_.ab
+      Dependencies: {}

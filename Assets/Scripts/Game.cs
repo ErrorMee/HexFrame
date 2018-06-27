@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Game : SingletonBehaviour<Game>
     public Transform canvasTrans;
 
     public GameSetting gameSetting;
+
+    public GameObject cube;
 
     void Awake()
     {
@@ -33,7 +36,6 @@ public class Game : SingletonBehaviour<Game>
     void Start()
     {
         SDKManager.Instance.Init();
-
         PatchManager.Instance.Init();
     }
 

@@ -13,7 +13,7 @@ public class BuildResources
     {
         CopyLuaToStreamingAssets.OnCopyLuaToStreaming();
 
-        BuildPipeline.BuildAssetBundles(PathUtil.StreamingassetsPath + "/patchs", BuildAssetBundleOptions.None,BuildTarget.Android);
+        BuildPipeline.BuildAssetBundles(PathUtil.StreamingassetsPath + "/patchs", BuildAssetBundleOptions.None, EditorUserBuildSettings.activeBuildTarget);
 
         AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 

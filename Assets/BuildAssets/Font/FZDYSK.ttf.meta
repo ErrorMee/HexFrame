@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eaa1d4ad69c1b3947a3c35180ff73b2d
+timeCreated: 1526281294
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZYaSong-EB-GBK
+  fontNames:
+  - FZYaSong-EB-GBK
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
