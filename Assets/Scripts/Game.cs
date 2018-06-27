@@ -21,6 +21,7 @@ public class Game : SingletonBehaviour<Game>
 
         gameObject.AddComponent<SDKManager>();
         gameObject.AddComponent<HttpManager>();
+        gameObject.AddComponent<ProtobufManager>();
         gameObject.AddComponent<PatchManager>();
         gameObject.AddComponent<AssetManager>();
         gameObject.AddComponent<UIManager>();
@@ -37,6 +38,7 @@ public class Game : SingletonBehaviour<Game>
     {
         SDKManager.Instance.Init();
         PatchManager.Instance.Init();
+        ProtobufManager.Instance.Test();
     }
 
     private void OnDestroy()

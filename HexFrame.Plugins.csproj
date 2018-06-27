@@ -79,6 +79,9 @@
     <Reference Include="DOTween">
       <HintPath>Assets/ThirdParty/DOTween/DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>Assets/Plugins/Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:/Program Files/Unity2017.1/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -144,7 +147,6 @@
     <None Include="Assets\ThirdParty\DOTween\DOTween.XML" />
     <None Include="Assets\ThirdParty\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\ThirdParty\DOTween\readme.txt" />
-    <None Include="Assets\ThirdParty\protobuf-net\Web\TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "protogen": {
-      "commandName": "Project",
-      "commandLineArgs": "--version"
-    }
-  }
-}
