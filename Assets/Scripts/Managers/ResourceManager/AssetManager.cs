@@ -104,7 +104,6 @@ public class AssetManager : SingletonBehaviour<AssetManager>
         if (assetBundleInfoDic.TryGetValue(abName, out abInfo))
         {
             AssetBundleRequest abRequest = abInfo.ab.LoadAssetAsync<T>(assetName);
-            Object[] subs = abInfo.ab.LoadAssetWithSubAssets(assetName);
             while (!abRequest.isDone)
             {
                 yield return null;
@@ -131,10 +130,10 @@ public class AssetManager : SingletonBehaviour<AssetManager>
         for (int i = 0; i < dependencies.Length; i++)
         {
             string depABName = dependencies[i];
-            GLog.Log("AssetBundleHash " + depABName + ":" + manifest.GetAssetBundleHash(depABName));
+            //GLog.Log("AssetBundleHash " + depABName + ":" + manifest.GetAssetBundleHash(depABName));
             yield return StartCoroutine(OnLoadAssetBundle(depABName,true));
         }
-        GLog.Log("AssetBundleHash " + abName + ":" + manifest.GetAssetBundleHash(abName));
+        //GLog.Log("AssetBundleHash " + abName + ":" + manifest.GetAssetBundleHash(abName));
         yield return StartCoroutine(OnLoadAssetBundle(abName,false));
     }
 

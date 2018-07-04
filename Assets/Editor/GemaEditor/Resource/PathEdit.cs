@@ -18,4 +18,11 @@ public class PathEdit
         GameSetting gameSetting = Resources.Load<GameSetting>("GameSetting");
         System.Diagnostics.Process.Start(gameSetting.GetPatchRootPath());
     }
+
+    const string kOpenStreamingAssetsPath = GemaEditorConst.Path + "/OpenStreamingAssetsPath";
+    [MenuItem(kOpenStreamingAssetsPath, false, 102)]
+    static void OpenStreamingAssetsPath()
+    {
+        System.Diagnostics.Process.Start(Application.streamingAssetsPath + "/patchs");
+    }
 }

@@ -55,11 +55,11 @@ public class SetAllTexture
 
         string endFolderName = new DirectoryInfo(Path.GetDirectoryName(assetPath)).Name;
 
-        string spritePackingTag = endFolderName;
-
         textureImporter.textureType = TextureImporterType.Sprite;
         textureImporter.spriteImportMode = SpriteImportMode.Single;
-        textureImporter.spritePackingTag = spritePackingTag;
+        //采用新版SpriteAtlas
+        //string spritePackingTag = endFolderName;
+        //textureImporter.spritePackingTag = spritePackingTag;
         textureImporter.mipmapEnabled = false;
         textureImporter.npotScale = TextureImporterNPOTScale.None;
         textureImporter.alphaIsTransparency = true;

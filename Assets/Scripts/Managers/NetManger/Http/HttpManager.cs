@@ -70,6 +70,7 @@ public class HttpManager : SingletonBehaviour<HttpManager>
                 finishLoad(uwr.downloadHandler.text);
             }
         }
+        uwr.Dispose();
     }
 
     /// <summary>
@@ -104,6 +105,7 @@ public class HttpManager : SingletonBehaviour<HttpManager>
                 downloadProgress(0, null, false);
             }
         }
+        uwr.Dispose();
     }
 }
 

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 555968121
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1ffc692ddcc6778a1c13068ace9bbb46
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f53a2cacd4c327e30587f3cbb342b18d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+Assets:
+- Assets/BuildAssets/SpriteAtlas/UISprite.spriteatlas
+Dependencies:
+- F:/StudySpace/GitSpace/HexFrame/Assets/StreamingAssets/patchs/uisprite_.ab

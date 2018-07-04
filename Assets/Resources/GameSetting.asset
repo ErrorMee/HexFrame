@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: GameSetting
   m_EditorClassIdentifier: 
   environment: 2
-  patchOpen: 0
-  patchPathSimulation: 0
+  patchOpen: 1
+  patchPathSimulation: 1
   patchRootPathSimulation: F:/StudySpace/GitSpace/HexFrame/Assets/../SimulationWebAddress/patchs/
   patchRootPathWeb: 
   editorLoadModeIsBundle: 1

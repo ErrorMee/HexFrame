@@ -80,7 +80,10 @@ public class GameSetting : ScriptableObject
         Input.multiTouchEnabled = false;
         Application.runInBackground = true;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Application.targetFrameRate = fps;
+        Application.targetFrameRate = 60;
+        //设置加载线程等级
+        //GLog.Log("backgroundLoadingPriority:" + Application.backgroundLoadingPriority.ToString());
+
         if (writeLog)
         {
             GLog.SetWriteLog();

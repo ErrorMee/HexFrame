@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 135577899
+CRC: 498023119
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -25,5 +25,9 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: uisprite_.ab
     Info_6:
-      Name: bgtest_.ab
+      Name: font_.ab
       Dependencies: {}
+    Info_7:
+      Name: spriteatlas_.ab
+      Dependencies:
+        Dependency_0: uisprite_.ab

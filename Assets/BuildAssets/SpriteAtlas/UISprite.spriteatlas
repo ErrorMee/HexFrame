@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UISprite
+  m_EditorData:
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+    packingParameters:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 8e69707c9de2bcf46aa4d92821a7722b, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3676b12dcb6a257438d6dfe82561d35b, type: 3}
+  - {fileID: 21300000, guid: 0effcbb855bb1c5469a245204f19c67a, type: 3}
+  - {fileID: 21300000, guid: 6f9c056ef4cc63f4582594cee6657a17, type: 3}
+  - {fileID: 21300000, guid: 59081fc38b3e4074bae5f8de2a1d31b8, type: 3}
+  - {fileID: 21300000, guid: f237d31e24587cf4c8188dba6d31c2aa, type: 3}
+  - {fileID: 21300000, guid: 20a7f03227c4c1c499a390b30c47384e, type: 3}
+  - {fileID: 21300000, guid: 5ee888c013609af48bf0a54568691f90, type: 3}
+  - {fileID: 21300000, guid: 765c6c8bf045a479a92ea0ac3eeea8e8, type: 3}
+  - {fileID: 21300000, guid: 18663e33fb9522e4497f1f2bbb11aace, type: 3}
+  - {fileID: 21300000, guid: 36949d93fce6ccf46ab6da0c1c919d86, type: 3}
+  - {fileID: 21300000, guid: 88ab0f9275b7aa241a8efe7567355ffa, type: 3}
+  - {fileID: 21300000, guid: a2fe05c97a6b5cb4cb5712538194c31f, type: 3}
+  - {fileID: 21300000, guid: 1733a9ebc7428444cb56572e843398f9, type: 3}
+  - {fileID: 21300000, guid: c776fedfd802035438c70bf4159d3805, type: 3}
+  - {fileID: 21300000, guid: 8cb33bce5e4a0db4b959c3beea8a1e2d, type: 3}
+  - {fileID: 21300000, guid: 46dba4354b49dac4581d7f4434990f96, type: 3}
+  - {fileID: 21300000, guid: 566716e84120ce14080b5f6af382553a, type: 3}
+  - {fileID: 21300000, guid: 43da4faf4dfac7e408719768f17d5d9d, type: 3}
+  - {fileID: 21300000, guid: 801cfafd5eb33bd4eb72574b6da931f3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - logo_01
+  - logo_17
+  - logo_16
+  - cell_03
+  - Marker05
+  - Marker04
+  - Marker01
+  - Marker00
+  - Marker03
+  - Marker02
+  - cell_02
+  - cell_01
+  - cell_04
+  - frame_01
+  - frame_02
+  - 128stop
+  - 128add
+  - 128close
+  - tipbar
+  m_Tag: UISprite
+  m_IsVariant: 0
