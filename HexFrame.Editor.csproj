@@ -27,7 +27,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_POST_PROCESSING_STACK_V2;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_POST_PROCESSING_STACK_V2;UNITY_HAS_GOOGLEVR</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -206,6 +206,41 @@
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Hotfix.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\TemplateRef.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Attributes\DecoratorAttribute.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Attributes\PostProcessEditorAttribute.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\BaseEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Decorators\AttributeDecorator.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Decorators\Decorators.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Decorators\TrackballDecorator.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\EffectListEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\AmbientOcclusionEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\AutoExposureEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\BloomEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\ChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\ColorGradingEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\DefaultPostProcessEffectEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\DepthOfFieldEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\LensDistortionEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\ScreenSpaceReflectionsEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Effects\VignetteEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessDebugEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessEffectBaseEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessEffectEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessLayerEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessProfileEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\PostProcessVolumeEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\CubeLutAssetFactory.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\CubeLutAssetImporter.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\DefineSetter.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\ProfileFactory.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\ResourceAssetFactory.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Tools\VolumeFactory.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\CurveEditor.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\EditorUtilities.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\GlobalSettings.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\PostProcessShaderIncludePath.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\SerializedParameterOverride.cs" />
+    <Compile Include="Assets\ThirdParty\PostProcessing\Editor\Utils\Styling.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\Newtonsoft.Json.xml" />
@@ -255,6 +290,69 @@
     <None Include="Assets\ThirdParty\DOTween\DOTween.XML" />
     <None Include="Assets\ThirdParty\DOTween\Editor\DOTweenEditor.XML" />
     <None Include="Assets\ThirdParty\DOTween\readme.txt" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\ACES.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\D3D11.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\D3D12.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\D3D9.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\Metal.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\OpenGL.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\PSP2.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\PSSL.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\Switch.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\Vulkan.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\API\XboxOne.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\AutoExposure.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Bloom.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Copy.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\CopyStd.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\DeferredFog.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\DepthOfField.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\DepthOfField.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\DiscardAlpha.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\DiskKernels.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Distortion.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Dithering.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ExposureHistogram.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ExposureHistogram.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\FastApproximateAntialiasing.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\FinalPass.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Fog.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\GaussianDownsample.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\GrainBaker.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Lut2DBaker.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Lut3DBaker.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MotionBlur.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MultiScaleVO.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MultiScaleVODownsample1.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MultiScaleVODownsample2.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MultiScaleVORender.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\MultiScaleVOUpsample.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ScalableAO.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ScalableAO.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ScreenSpaceReflections.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\ScreenSpaceReflections.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasing.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasing.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasingBridge.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\TemporalAntialiasing.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Texture2DLerp.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Texture3DLerp.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Builtins\Uber.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Colors.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Histogram.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Histogram.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\LightMeter.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Overlays.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Vectorscope.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Vectorscope.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Waveform.compute" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Debug\Waveform.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Editor\ConvertToLog.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Editor\CurveGrid.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Editor\Trackball.shader" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\Sampling.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\StdLib.hlsl" />
+    <None Include="Assets\ThirdParty\PostProcessing\Shaders\xRLib.hlsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
