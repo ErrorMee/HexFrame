@@ -130,6 +130,9 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Editor/MemoryProfiler/JsonDotNet20/Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="HexFrame.Plugins.csproj">
@@ -177,12 +180,37 @@
     <Compile Include="Assets\Editor\GemaEditor\Resource\SetAssetBundle.cs" />
     <Compile Include="Assets\Editor\GemaEditor\Resource\TexturePostprocessor.cs" />
     <Compile Include="Assets\Editor\GemaEditor\StreamingAssetsFileEdit.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\ArrayTools.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\BytesAndOffset.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\CrawledDataUnpacker.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Crawler.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\HighLevelAPI.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Inspector.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\LowLevelAPI.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\ManagedHeapExtensions.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\MemoryProfilerWindow.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\PackedManagedObject.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\PackedMemorySnapshotUtility.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\PrimitiveValueReader.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\ShortestPathToRootFinder.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\StringTools.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Treemap\Group.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Treemap\Item.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Treemap\ITreemapRenderable.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Treemap\Tests\TreemapTests.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\Treemap\Utility.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\TreeMapView.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\TypeTools.cs" />
+    <Compile Include="Assets\Editor\MemoryProfiler\ZoomArea.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Generator.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\Hotfix.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\LinkXmlGen\LinkXmlGen.cs" />
     <Compile Include="Assets\Scripts\Managers\LuaManager\XLua\Src\Editor\TemplateRef.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\Newtonsoft.Json.xml" />
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\license.txt" />
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\readme.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_progressbar.xml" />

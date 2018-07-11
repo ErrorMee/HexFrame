@@ -2,15 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game : SingletonBehaviour<Game>
 {
     public Transform canvasTrans;
 
     public GameSetting gameSetting;
-
-    public GameObject cube;
-
+    
     void Awake()
     {
         if (gameSetting == null)

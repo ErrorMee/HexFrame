@@ -130,6 +130,9 @@
     <Reference Include="DOTweenEditor">
       <HintPath>Assets/ThirdParty/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Editor/MemoryProfiler/JsonDotNet20/Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="HexFrame.Plugins.csproj">
@@ -141,6 +144,9 @@
     <Compile Include="Assets\Plugins\ShareSDK\Editor\ShareSDKConfigEditor.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\Newtonsoft.Json.xml" />
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\license.txt" />
+    <None Include="Assets\Editor\MemoryProfiler\JsonDotNet20\readme.txt" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
     <None Include="Assets\Plugins\Android\res\drawable\ssdk_oks_classic_progressbar.xml" />

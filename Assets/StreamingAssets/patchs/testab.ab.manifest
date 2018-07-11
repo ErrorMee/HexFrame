@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1202443563
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e6fa719865b46f5c79dd343e2ae67bf
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 458b28042be36947a47ed5242420c271
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/BuildAssets/TestM.mat
+- Assets/BuildAssets/TestPB.prefab
+Dependencies: []
