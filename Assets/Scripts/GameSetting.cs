@@ -82,7 +82,7 @@ public class GameSetting : ScriptableObject
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Application.targetFrameRate = 60;
         //设置加载线程等级
-        //Application.backgroundLoadingPriority = ThreadPriority.High;
+        Application.backgroundLoadingPriority = ThreadPriority.High;
         //设置UWR缓存压缩
         //Caching.compressionEnabled = true;
         

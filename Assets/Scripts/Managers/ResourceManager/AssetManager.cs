@@ -104,6 +104,7 @@ public class AssetManager : SingletonBehaviour<AssetManager>
         if (assetBundleInfoDic.TryGetValue(abName, out abInfo))
         {
             AssetBundleRequest abRequest = abInfo.ab.LoadAssetAsync<T>(assetName);
+            //abRequest.priority;
             while (!abRequest.isDone)
             {
                 yield return null;

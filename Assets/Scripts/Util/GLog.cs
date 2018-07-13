@@ -7,6 +7,9 @@ using UnityEngine;
 //------------------------------------------------------------
 public static class GLog
 {
+    /// <summary>
+    /// 此开关考虑使用 [Conditional] attribute代替
+    /// </summary>
     public static bool isOpen = true;
 
     static public void Log(string str, bool force = false)

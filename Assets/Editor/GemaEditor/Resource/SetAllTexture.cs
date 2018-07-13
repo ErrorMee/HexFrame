@@ -63,6 +63,7 @@ public class SetAllTexture
         textureImporter.mipmapEnabled = false;
         textureImporter.npotScale = TextureImporterNPOTScale.None;
         textureImporter.alphaIsTransparency = true;
+        textureImporter.isReadable = false;
 
         TextureImporterPlatformSettings tips = new TextureImporterPlatformSettings();
         tips.name = "Android";
