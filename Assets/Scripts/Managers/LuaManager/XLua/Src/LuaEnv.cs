@@ -23,6 +23,7 @@ namespace XLua
     using System.Collections.Generic;
     using System.Reflection;
 
+    [Serializable]
     public class LuaEnv : IDisposable
     {
         internal RealStatePtr rawL;

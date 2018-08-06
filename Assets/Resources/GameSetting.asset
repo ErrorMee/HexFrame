@@ -16,6 +16,6 @@ MonoBehaviour:
   patchPathSimulation: 0
   patchRootPathSimulation: F:/StudySpace/GitSpace/HexFrame/Assets/../SimulationWebAddress/patchs/
   patchRootPathWeb: 
-  editorLoadModeIsBundle: 1
-  fps: 45
+  editorLoadModeIsBundle: 0
+  fps: 30
   writeLog: 0

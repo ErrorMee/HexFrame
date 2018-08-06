@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XLua;
@@ -6,12 +7,12 @@ using XLua;
 public class LuaManager : SingletonBehaviour<LuaManager>
 {
     private static string REQUIRE_FORMAT = "require('{0}')";
-
+    
     public LuaEnv luaEnv;
 
     private static float lastGCTime = 0;
     private const float GCInterval = 1;//1 second 
-
+    
     private void Awake()
     {
         luaEnv = new LuaEnv();
@@ -51,7 +52,7 @@ public class LuaManager : SingletonBehaviour<LuaManager>
     {
         if (Time.time - LuaManager.lastGCTime > GCInterval)
         {
-            luaEnv.Tick();
+            luaEnv.GC();
             LuaManager.lastGCTime = Time.time;
         }
     }
@@ -115,5 +116,4 @@ public class LuaManager : SingletonBehaviour<LuaManager>
 
         return PathUtil.GetAssetPath("lua/" + hash);
     }
-
 }

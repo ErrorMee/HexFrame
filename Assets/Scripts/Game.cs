@@ -1,15 +1,17 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Game : SingletonBehaviour<Game>
 {
     public Transform canvasTrans;
 
     public GameSetting gameSetting;
-    
+
     void Awake()
     {
         if (gameSetting == null)
@@ -65,6 +67,6 @@ public class Game : SingletonBehaviour<Game>
         UIManager.Instance.OpenUI("GroundView");
         UIManager.Instance.OpenUI("MainView");
         UIManager.Instance.OpenUI("TipsView");
+        
     }
-
 }

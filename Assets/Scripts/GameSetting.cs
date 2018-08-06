@@ -80,7 +80,7 @@ public class GameSetting : ScriptableObject
         Input.multiTouchEnabled = false;
         Application.runInBackground = true;
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = fps;
         //设置加载线程等级
         Application.backgroundLoadingPriority = ThreadPriority.High;
         //设置UWR缓存压缩
